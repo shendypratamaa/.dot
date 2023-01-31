@@ -1,0 +1,18 @@
+#!/bin/sh
+
+if [ -z "$1" ]; then
+	url="$(pbcopy)"
+else
+	url="$1"
+fi
+
+case "$url" in
+	*mkv|*webm|*mp4|*youtube.com/watch*|*youtube.com/playlist*|*youtube.com/shorts*|*youtu.be*|*hooktube.com*|*bitchute.com*|*videos.lukesmith.xyz*|*odysee.com*)
+		mpv --really-quiet --autofit=90% "$url" >/dev/null 2>&1 & ;;
+	*png|*jpg|*jpe|*jpeg|*gif)
+		curl -sL "$url" > "$HOME/.cache/lf/$(echo "$url" | sed "s/.*\///;s/%20/ /g")" && qlmanage -p "$HOME/.cache/lf/$(echo "$url" | sed "s/.*\///;s/%20/ /g")"  >/dev/null 2>&1 & ;;
+	*pdf|*cbz|*cbr)
+		curl -sL "$url" > "$HOME/.cache/zathura/$(echo "$url" | sed "s/.*\///;s/%20/ /g")" && zathura "$HOME/.cache/zathura/$(echo "$url" | sed "s/.*\///;s/%20/ /g")"  >/dev/null 2>&1 & ;;
+	*)
+		[ -f "$url" ] && $EDITOR "$url" >/dev/null 2>&1 || open -a "$BROWSER" "$url" >/dev/null 2>&1
+esac

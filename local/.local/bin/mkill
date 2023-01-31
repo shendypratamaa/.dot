@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# FZF KILL PROCESS
+# ===========================================================================
+# Title: kill processs pid (sorted by highest ram usage)
+# Author: [shendy-pratama] <shendypratamaa@gmail.com>
+# Findme: [https://github.com/shendypratamaa]
+# ===========================================================================
+# Requirement:
+# fzf [https://github.com/junegunn/fzf]
+# sed [macos] >>> not tested with [gnu-sed] || maybe works ?
+# ===========================================================================
+# OS: MacOS Ventura 13.1
+# ===========================================================================
+
+(date;
+	ps -u $USER -o pid,%cpu,%mem,comm |
+	sed -n '1!p' |
+	sort -b -rk3 -r) |
+	fzf --prompt="Kill Process > " \
+		--header="CTRL-R: Reload" \
+		--header-lines=1 -m \
+		--bind='ctrl-r:reload(date;
+		ps -u $USER -o pid,%cpu,%mem,comm |
+		sed -n '1!p' |
+		sort -b -rk3 -r)' |
+	awk '{print $1}' |
+	xargs kill -9 2>/dev/null

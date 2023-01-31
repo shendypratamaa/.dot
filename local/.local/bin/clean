@@ -1,0 +1,13 @@
+#!/bin/bash
+
+clean() {
+	sudo purge
+	sudo rm -rf -v ~/Library/Logs/*
+	sudo rm -rf -v ~/Library/Caches/*
+	sudo rm -rf -v ~/Library/Safari/Downloads.plist
+	sudo rm -rf -v ~/.Trash/*
+}
+
+echo "start cleaning...🌊"
+clean
+echo "cleaning complete...🤩"

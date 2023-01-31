@@ -1,0 +1,87 @@
+#!/bin/bash
+
+# FZF LAUNCHER
+# ===========================================================================
+# Title:  Launcher Applications MacOS
+# Author: [shendy-pratama] <shendypratamaa@gmail.com>
+# Findme: [https://github.com/shendypratamaa]
+# ===========================================================================
+# Requirement:
+# fd  [https://github.com/sharkdp/fd]
+# fzf [https://github.com/junegunn/fzf]
+# sed [macos] >>> not tested with [gnu-sed] || maybe works ?
+# ===========================================================================
+# OS: MacOS Ventura 13.1
+# ===========================================================================
+
+FD=$(which fd)
+FZF=$(which fzf)
+SED=$(which sed)
+
+if [ -x "$FD" ] && [ -x "$FZF" ] && [ -x "$SED" ]; then
+	__find_at() {
+		APPLICATION_EXCLUDE="													\
+			--exclude=Utilities													\
+		"
+
+		SYSTEMAPPLICATION_EXCLUDE="												\
+			--exclude=Chess.app --exclude=Stocks.app --exclude=Podcasts.app		\
+			--exclude=News.app --exclude=Music.app --exclude=Dictionary.app		\
+			--exclude=Home.app --exclude=TV.app --exclude=Utilities			    \
+			--exclude=Stickies.app --exclude=Shortcuts.app --exclude=Notes.app	\
+			--exclude=Preview.app --exclude=TextEdit.app						\
+			--exclude=Mission* --exclude=QuickTime*								\
+		"
+
+		SYSTEMAPPLICATIONUTILITIES_EXCLUDE="									\
+			--exclude=Grapher.app --exclude=Console.app							\
+			--exclude=Bluetooth* --exclude=ColorSync*							\
+			--exclude=Digital* --exclude=Script*								\
+		"
+
+		fd . /Applications --max-depth=1 $APPLICATION_EXCLUDE | grep app 2>/dev/null &&
+			fd . /System/Applications --max-depth=1 $SYSTEMAPPLICATION_EXCLUDE | grep app 2>/dev/null &&
+			fd . /System/Applications/Utilities --max-depth=1 $SYSTEMAPPLICATIONUTILITIES_EXCLUDE | grep app 2>/dev/null &&
+			fd . "$HOME/.local/share/fzf-launcher" --max-depth=1 --exclude=fzf-launcher 2>/dev/null
+	}
+
+	SELECT=$(
+		__find_at |
+			sed "s/^\/System\/Applications\/Utilities/ /;s/^\/System\/Applications/ /;s/^\/Applications/ /;s/^\/Users\/$(whoami)\/.local\/share\/fzf-launcher/ /;s/^[ \t]*//;s#/##;s|/$||" |
+			sort |
+			fzf --inline-info --margin=0,1 --border=sharp \
+				--reverse --height=100% \
+				--prompt="Fzf Launcher App > "
+	)
+
+	if [[ "$SELECT" =~ [[:space:]] ]]; then
+		case $SELECT in
+		AirPort\ Utility* | Activity\ Monitor* | Disk\ Utility* | Keychain\ Access* | Migration\ Assistant* | System\ Information* | VoiceOver\ Utility* | Boot\ Camp\ Assistant* | Audio\ MIDI\ Setup*)
+			open -a "/System/Applications/Utilities/$SELECT"
+			;;
+		App\ Store* | Font\ Book* | Image\ Capture* | Photo\ Booth* | System\ Settings* | Time\ Machine*)
+			open -a "/System/Applications/$SELECT"
+			;;
+		Visual\ Studio\ Code*)
+			open -a "/Applications/$SELECT"
+			;;
+		esac
+	else
+		case $SELECT in
+		Terminal* | Screenshot*)
+			open -a "/System/Applications/Utilities/$SELECT"
+			;;
+		Automator* | Books* | Calculator* | Calendar* | Contact* | Clock* | FaceTime* | FindMy* | Freeform* | Launchpad* | Maps* | Mail* | Messages* | Photos* | Reminders* | Siri* | VoiceMemos* | Weather*)
+			open -a "/System/Applications/$SELECT"
+			;;
+		Alacritty* | AltTab* | Firefox* | Karabiner-Elements* | karabiner-EventViewer* | Safari*)
+			open -a "/Applications/$SELECT"
+			;;
+		Browser-surf | Bookmarks | Kill-process | Emoji | Vocabulary)
+			"$HOME/.local/share/fzf-launcher/$SELECT"
+			;;
+		esac
+	fi
+else
+	echo "😢 wooops, [fd], [fzf], or [sed] not found!"
+fi

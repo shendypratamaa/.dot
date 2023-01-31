@@ -1,0 +1,53 @@
+#!/bin/bash
+
+# FZF SHARE FILE
+# ===========================================================================
+# Title: share file support preview (sh)
+# Author: [shendy-pratama] <shendypratamaa@gmail.com>
+# Findme: [https://github.com/shendypratamaa]
+# ===========================================================================
+# Requirement:
+# fd, curl, fzf, sed, awk
+# ===========================================================================
+# OS: MacOS Ventura 13.1
+# ===========================================================================
+
+TMP_LINK="$HOME/.cache/user/share_tmp.txt"
+SHAREDIR="$HOME/Public"
+
+FILE="$(
+	fd . -H -L -t f |
+		fzf --prompt="select file > " |
+		awk '{print $1}'
+)"
+
+if [ "$FILE" != "" ]; then
+	echo $(file --mime-type $FILE)
+	case $(file --mime-type "$FILE") in
+	*/x-shellscript)
+		cp -v "$FILE" "$SHAREDIR/$FILE.txt"
+		chmod 644 "$SHAREDIR/$FILE.txt"
+		curl -F "file=@$SHAREDIR/$FILE.txt" 0x0.st >>"$TMP_LINK" 2>/dev/null
+
+		rm -f "$SHAREDIR/$FILE.txt"
+
+		URL="$(sed "" "$TMP_LINK" | tail -1)"
+		curl -I "$URL" >response_tmp.txt 2>/dev/null
+
+		URL_RESPONSE="$(sed "" response_tmp.txt | head -1 | awk '{print $2}')"
+		rm -rf response_tmp.txt
+
+		if [ "$URL_RESPONSE" = "200" ]; then
+			SHARE_LINK="$(sed "" "$TMP_LINK" | tail -1)"
+			echo "link share -> $SHARE_LINK"
+			open "$SHARE_LINK"
+			sed "" "$TMP_LINK" | tail -1 | tr -d '\n' | pbcopy
+			echo "share successfully ✅"
+			exit
+		fi
+		;;
+	*) echo "😢 mime-type can't identifier filetype" ;;
+	esac
+else
+	echo "😢 woops share failed, no file selected"
+fi

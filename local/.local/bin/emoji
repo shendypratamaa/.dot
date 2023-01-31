@@ -1,0 +1,5 @@
+#!/bin/bash
+
+EMOJI_PATH="$HOME/.local/share/unicode"
+EMOJI="$(sed '' "$EMOJI_PATH" | fzf -m --prompt="select emoji > " )"
+echo "$EMOJI" | awk '{print $1}' | tr '\n' ' ' | pbcopy

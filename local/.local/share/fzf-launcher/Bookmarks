@@ -1,0 +1,53 @@
+#!/bin/bash
+
+BOOKMARKS_OPTS=$(echo -e "open-bookmarks\nadd-bookmarks" | fzf --reverse --margin=0,1 --inline-info --prompt="Fzf Bookmarks >")
+BOOKMARKS_STORE="$HOME/Documents/data/bookmarks-url.txt"
+
+case $BOOKMARKS_OPTS in
+open-bookmarks)
+	SELECT_BOOKMARK=$(
+		sed "" "$BOOKMARKS_STORE" |
+			fzf -m --border=sharp --reverse \
+				--margin=0,1 --inline-info \
+				--prompt="Fzf Bookmarks > " |
+			awk '{print $1}'
+	)
+
+	PATTERN=$(echo "$SELECT_BOOKMARK" | grep 'youtube')
+
+	if [ "$PATTERN" != "" ]; then
+		BOOKYTOPTS=$(
+			echo -e "Videos\nPlaylists\nSearch" |
+				fzf --border=sharp --reverse --margin=0,1 \
+					--inline-info --prompt="Fzf Bookmarks > "
+		)
+		case $BOOKYTOPTS in
+		Videos)
+			open "$SELECT_BOOKMARK/videos"
+			;;
+		Playlists)
+			open "$SELECT_BOOKMARK/playlists"
+			;;
+		Search)
+			echo -e " Channel Search > \c"; read -r ans
+			open "$SELECT_BOOKMARK/search?query=$ans"
+			;;
+		esac
+	else
+		open "$SELECT_BOOKMARK"
+	fi
+	;;
+add-bookmarks)
+	echo -e " Bookmarks Link > \c"; read -r ans
+	echo -e " Bookmarks Title > \c";  read -r title
+	if [ "$ans" != "" ] || [ "$title" != "" ]; then
+		echo "$ans | $title" >> "$BOOKMARKS_STORE"
+		echo "Bookmark Successfully Added 🌸"
+		sleep 5
+	else
+		echo "Bookmark link and title cannot be empty 🌸"
+		sleep 5
+	fi
+	;;
+*) exit ;;
+esac

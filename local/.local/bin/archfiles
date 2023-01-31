@@ -1,0 +1,59 @@
+#!/bin/bash
+
+# ACHIEVE & ENCRYPT
+# ===========================================================================
+# Title: achieve and encrypt file
+# Author: [shendy-pratama] <shendypratamaa@gmail.com>
+# Findme: [https://github.com/shendypratamaa]
+# ===========================================================================
+# Requirement:
+# fzf [https://github.com/junegunn/fzf]
+# gnupg
+# tar
+# sed [macos] >>> not tested with [gnu-sed] || maybe works ?
+# ===========================================================================
+# OS: MacOS Ventura 13.1
+# ===========================================================================
+
+GPG=$(which gpg)
+TAR=$(which tar)
+
+EXCLUDE_DIR=" \
+    --exclude=Library --exclude=.npm --exclude=.cache --exclude=.git \
+    --exclude=.local --exclude=Movies --exclude=Pictures \
+    --exclude=Music --exclude=.vim --exclude=.ssh \
+"
+
+if [ -x "$GPG" ] && [ -x "$TAR" ]; then
+	FILES="$(fd . | fzf -m --prompt="select files > " | tr ' ' '\n')"
+	if [ "$FILES" != "" ]; then
+		OPTS=$(echo -e "achieve-only\nachieve-with-gpg" | fzf --prompt="select opts")
+		case $OPTS in
+		achieve-only)
+			echo -e "Achieve Name :\c"; read -r ans
+			[[ -z "$ans" ]] && ans=$(date "+%F") || $ans >/dev/null 2>/dev/null
+			# shellcheck disable=SC2086
+			mkdir $ans &&
+				cp -v $FILES $ans &&
+				tar -czf "${ans}.tar.gz" "$ans" &&
+				rm -rf $ans
+			;;
+		achieve-with-gpg)
+			echo -e "Achieve Name :\c"; read -r ans
+			[[ -z "$ans" ]] && ans=$(date "+%F") || "$ans" >/dev/null 2>/dev/null
+			# shellcheck disable=SC2086
+			mkdir $ans &&
+				cp -v $FILES $ans &&
+				tar -czf ${ans}.tar.gz $ans &&
+				rm -rf $ans &&
+				gpg -c ${ans}.tar.gz 2>/dev/null &&
+				rm -rf ${ans}.tar.gz
+			;;
+		esac
+		FF_EX=$(fd . | grep 'gz')
+		DIST=$(fd . "$HOME" -H -t d $EXCLUDE_DIR --max-depth=5 | fzf --prompt="select directory > ")
+		[ "$FF_EX" != "" ] && mv -iv "$FF_EX" "$DIST"
+	fi
+else
+	echo "😢 woops, gnupg or tar not found!"
+fi

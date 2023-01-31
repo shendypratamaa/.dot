@@ -1,0 +1,125 @@
+#!/bin/sh
+
+# prompt
+set promptfmt "[\033[32;1m%u\033[0m]:[\033[34;1m%d\033[0m\033[1m%f\033[0m]"
+
+# script
+set previewer ~/.config/lf/preview.sh
+set cleaner ~/.config/lf/clear.sh
+
+# opts
+set hidden
+set drawbox
+set icons
+set ignorecase
+set relativenumber
+set sortby 'natural'; set info size
+set scrolloff 10
+
+# custom function
+cmd open ${{
+    case $(file --mime-type -Lb $f) in
+        text/*) $EDITOR $fx ;;
+        video/*)
+            INFO="$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of default=nw=1 $fx)"
+            W="$(echo $INFO | awk -F ' ' '{print $1}' | awk -F '=' '{print $2}')"
+            H="$(echo $INFO | awk -F ' ' '{print $2}' | awk -F '=' '{print $2}')"
+            if [ $W -gt $H ]; then
+               mpv --really-quiet --autofit=90% $fx 2>/dev/null &
+            else
+               mpv --really-quiet --autofit=30% $fx 2>/dev/null &
+            fi
+            ;;
+        image/*) qlmanage -p $fx >/dev/null 2>/dev/null ;;
+        application/pdf) zathura $fx >/dev/null 2>/dev/null & ;;
+    esac
+}}
+
+cmd bulk-rename ${{
+    old="$(mktemp)"
+    new="$(mktemp)"
+    if [ -n "$fs" ]; then
+        fs="$(basename -a $fs)"
+    else
+        fs="$(ls)"
+    fi
+    printf '%s\n' "$fs" >"$old"
+    printf '%s\n' "$fs" >"$new"
+    $EDITOR "$new"
+    [ "$(wc -l < "$new")" -ne "$(wc -l < "$old")" ] && exit
+    paste "$old" "$new" | while IFS= read -r names; do
+        src="$(printf '%s' "$names" | cut -f1)"
+        dst="$(printf '%s' "$names" | cut -f2)"
+        if [ "$src" = "$dst" ] || [ -e "$dst" ]; then
+            continue
+        fi
+        mv -- "$src" "$dst"
+    done
+    rm -- "$old" "$new"
+    lf -remote "send $id unselect"
+}}
+
+cmd moveto ${{
+    set -f
+    dest="$(fd . $HOME | fzf)"
+    echo "are you sure want move file to $dest ? [Y/n] \c"; read ans
+    if [ -z $ans ] || [ $ans = "y" ]; then
+        for x in $fx; do
+                eval mv -iv \"$x\" \"$dest\"
+        done
+    fi
+}}
+
+cmd copyto ${{
+    set -f
+    dest="$(fd . $HOME | fzf)"
+    echo "are you sure want move file to $dest ? [Y/n] \c"; read ans
+    if [ -z $ans ] || [ $ans = "y" ]; then
+        for x in $fx; do
+                eval cp -iv \"$x\" \"$dest\"
+        done
+    fi
+}}
+
+cmd mkdir %set -f; printf " Directory Name: "; read -r ans; mkdir -p "$ans"
+cmd mkfile %set -f; printf " File Name: "; read -r ans; touch "$ans"
+cmd setwall %set -f; printf " are you sure want to change [Y/n] "; read -r ans; [ "$ans" = "y" ] || [ -z "$ans" ] && setwallpaper "$f"
+cmd trash ${{ mv $fx ~/.Trash && echo "deleted" $fx }}
+
+# clear key for recieve multiple keymap
+map g
+map m
+map r
+map e
+map c
+
+# chain function into key
+map rs rename
+map rb bulk-rename
+map mf mkfile
+map md mkdir
+map mv moveto
+map C copyto
+
+# basic key
+map . set hidden!
+map D trash
+map p paste
+map x cut
+map y copy
+map cc clear
+map <enter> open
+map "<c-\>" shell
+
+# wallpaper
+map B setwall
+
+# bookmaks key
+map gh cd ~
+map gc cd ~/.config
+map ge cd ~/.cache
+map gs cd ~/.local/bin
+map gl cd ~/.local/share
+map gp cd ~/Pictures
+map gd cd ~/Documents
+map gm cd ~/Movies/course

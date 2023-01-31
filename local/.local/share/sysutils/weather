@@ -1,0 +1,12 @@
+#!/bin/bash
+
+LOCATION="Cianjur"
+WEATHER=$(curl -s "wttr.in/$LOCATION?format=1" | awk '{print $2}')
+
+INTERVAL=$((60 * 1))
+
+while true;
+do
+    echo "$WEATHER"
+    sleep "$INTERVAL"
+done

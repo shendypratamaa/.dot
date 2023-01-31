@@ -1,0 +1,94 @@
+### Settings from original zathurarc ###
+set font "JetBrains Mono 10"
+set scroll-page-aware true
+set scroll-step 50
+set render-loading false
+set adjust-open best-fit
+set scroll-full-overlap 0.01
+set page-padding 1
+set pages-per-row 1
+set scroll-full-overlap 0.01
+set statusbar-h-padding 0
+set statusbar-v-padding 0
+set selection-clipboard clipboard
+map u scroll half-up
+map d scroll half-down
+map D toggle_page_mode
+map r reload
+map R rotate
+map K zoom in
+map J zoom out
+map p print
+
+### zathura-pywal ###
+# Allow recolor
+set recolor 'true'
+
+# Don't allow original hue when recoloring
+set recolor-keephue 'false'
+
+# Don't keep original image colors while recoloring
+set recolor-reverse-video 'false'
+
+# Command line completion entries
+set completion-fg '#cfd9da'
+set completion-bg '#0b0b0d'
+
+# Command line completion group elements
+set completion-group-fg '#2d6186'
+set completion-group-bg '#0b0b0d'
+
+# Current command line completion element
+set completion-highlight-fg '#0b0b0d'
+set completion-highlight-bg '#cfd9da'
+
+# Default foreground/background color
+set default-bg rgba(11,11,13,1)
+
+# Input bar
+set inputbar-fg '#cfd9da'
+set inputbar-bg '#0b0b0d'
+
+# Notification
+set notification-fg '#cfd9da'
+set notification-bg '#0b0b0d'
+
+# Error notification
+set notification-error-fg '#cfd9da'
+set notification-error-bg '#204b62'
+
+# Warning notification
+set notification-warning-fg '#cfd9da'
+set notification-warning-bg '#204b62'
+
+# Tab - TODO
+# set tabbar-fg
+# set tabbar-bg
+
+# Focused tab - TODO
+# set tabbar-focus-fg
+# set tabbar-focus-bg
+
+# Status bar
+set statusbar-fg '#cfd9da'
+set statusbar-bg '#0b0b0d'
+
+# Highlighting parts of the document (e.g. show search results)
+set highlight-color '#2d6186'
+set highlight-active-color '#2d6186'
+
+# Represent light/dark colors in recoloring mode
+set recolor-lightcolor rgba(0,0,0,0)
+set recolor-darkcolor '#cfd9da'
+
+# 'Loading...' text
+set render-loading-fg '#cfd9da'
+set render-loading-bg '#0b0b0d'
+
+# Index mode
+set index-fg '#cfd9da'
+set index-bg '#0b0b0d'
+
+# Selected element in index mode
+set index-active-fg '#0b0b0d'
+set index-active-bg '#cfd9da'

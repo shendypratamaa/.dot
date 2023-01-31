@@ -1,0 +1,10 @@
+plugins/
+playlists/
+assets/
+automatic_backups/
+zathurarc.bak
+state.yml
+watched.txt
+.zcompcache/
+.zcompdump
+.zsh_history

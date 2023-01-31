@@ -1,0 +1,11 @@
+node_modules
+.local
+.git
+.cache
+.ssh
+.npm
+.vim
+.viminfo
+.Trash
+.config/zsh/plugins
+.config/tmux/plugins

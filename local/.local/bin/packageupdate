@@ -1,0 +1,14 @@
+#!/bin/bash
+
+cleaner() {
+    clean &&
+    brew update &&
+    brew upgrade &&
+    brew cleanup --prune=all &&
+    brew autoremove &&
+    brew info &&
+    brew doctor &&
+    sleep 0.01
+}
+
+cleaner

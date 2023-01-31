@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# SETWALLPAPER (env)
+# ===========================================================================
+# Title: colorscheme
+# Author: [shendy-pratama] <shendypratamaa@gmail.com>
+# Findme: [https://github.com/shendypratamaa]
+# ===========================================================================
+# Requirement:
+# pywal, pywalfox, zathura-pywal, alacritty-pywal
+# ===========================================================================
+# OS: MacOS Ventura 13.1
+# ===========================================================================
+
+WALLPAPER_PATH="$HOME/Pictures/wallpaper"
+PYWAL_CACHE="$HOME/.cache/wal"
+
+if [ -z "$1" ]; then
+	SETWALL="$(fd . "$WALLPAPER_PATH" | grep -iE '(jpg|png)' | shuf -n1)"
+else
+	SETWALL="$1"
+fi
+
+rm -rf "$PYWAL_CACHE"
+convert "$SETWALL" "$HOME/.cache/user/bg.jpg"
+wal --saturate 0.5 -i "$HOME/.cache/user/bg.jpg"
+zathura-pywal
+alacritty-pywal
+pywalfox update
+launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"

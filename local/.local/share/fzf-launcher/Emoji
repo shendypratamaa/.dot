@@ -1,0 +1,11 @@
+#!/bin/sh
+
+EMOJI_PATH="$HOME/.local/share/unicode"
+
+EMOJI="$(
+	sed '' "$EMOJI_PATH" |
+		fzf --border=sharp --margin=0,1 \
+			--inline-info --reverse -m --prompt="Fzf Emoji > "
+)"
+
+echo "$EMOJI" | awk '{print $1}' | tr '\n' ' ' | pbcopy

@@ -1,0 +1,92 @@
+#!/bin/bash
+
+# FZF PREVIEWER
+# ===========================================================================
+# Title: preview image, pdf, movies w/(thumbnail)
+# Author: [shendy-pratama] <shendypratamaa@gmail.com>
+# Findme: [https://github.com/shendypratamaa]
+# ===========================================================================
+# Requirement:
+# fd, fzf, awk, sed, chafa, pdftoppm, ffmpegthumbnailer
+# qlmanage (macos), zathura, mpv
+# ===========================================================================
+# OS: MacOS Ventura 13.1
+# ===========================================================================
+
+PICDIR="$HOME/Pictures"
+BOKDIR="$HOME/Documents/ebook"
+MOVDIR="$HOME/Movies/course"
+THUMB_VID="$HOME/.cache/user/err.jpg"
+FZF_CACHE="$HOME/.cache/user/preview_fzf.txt"
+
+preview() {
+	MENU="images\nbooks\nvideos"
+	SELECT_MENU="$(
+		echo -e "$MENU" |
+			fzf --prompt "Select Previewer > " |
+			awk '{print $1}'
+	)"
+	if [ "$SELECT_MENU" = "images" ]; then
+		SELECT=$(
+			fd . "$PICDIR" -L -t f --exclude=Photo\ Booth\ Library --exclude=Photos\ Library.photoslibrary |
+				sed "s/^\/Users\/$(whoami)\/Pictures/ /;s#/##;s/^[ \t]*//" |
+				fzf --no-sort -m \
+					--prompt="Select Image > " \
+					--header="CTRL-D:Delete" \
+					--bind="ctrl-d:reload(
+								rm -f $HOME/Pictures/{1} &&
+									fd . $PICDIR -L -t f --exclude=Photo\ Booth\ Library --exclude=Photos\ Library.photoslibrary |
+									sed 's/^\/Users\/$(whoami)\/Pictures/ /;s#/##;s/^[ \t]*//' )" \
+					--preview="chafa -c full --color-space rgb --clear -s 100 $HOME/Pictures/{1}"
+		)
+		if [ "$SELECT" != "" ]; then
+			for i in $SELECT; do
+				echo "$HOME/Pictures/$i" >>"$FZF_CACHE"
+			done
+			qlmanage -p $(sed "" "$FZF_CACHE") >/dev/null 2>/dev/null &
+		else
+			echo "😢 not image selected!"
+		fi
+		sleep 0.01 &&
+			echo "" >"$FZF_CACHE"
+	elif [ "$SELECT_MENU" = "books" ]; then
+		SELECT=$(
+			fd . "$BOKDIR" -t f |
+				sed "s/^\/Users\/$(whoami)\/Documents\/ebook/ /;s#/##;s/^[ \t]*//" |
+				fzf --no-sort \
+					--prompt="Select Book > " \
+					--header="CTRL-O:Preview Thumbnail" \
+					--bind="ctrl-o:execute-silent(qlmanage -p $HOME/Documents/ebook/{1})" \
+					--preview="pdftoppm -png -f 1 -l 1 -jpeg -tiffcompression jpeg $HOME/Documents/ebook/{1} |
+								chafa -c full --color-space rgb --clear"
+		)
+		if [ "$SELECT" != "" ]; then
+			zathura "$HOME/Documents/ebook/$SELECT" 2>/dev/null &
+		else
+			echo "😢 no book selected!"
+		fi
+	elif [ "$SELECT_MENU" = "videos" ]; then
+		SELECT=$(
+			fd . "$MOVDIR" -t f |
+				sed "s/^\/Users\/$(whoami)\/Movies\/course/ /;s#/##;s/^[ \t]*//" |
+				fzf --no-sort -m \
+					--prompt="Select Video > " \
+					--preview="ffmpegthumbnailer -t 1% -q 3 -s 0 -c jpeg -i $HOME/Movies/course/{1} -o ${THUMB_VID} |
+								chafa -c full --color-space rgb --clear -s 100 ${THUMB_VID}"
+		)
+		if [ "$SELECT" != "" ]; then
+			for i in $SELECT; do
+				echo "$HOME/Movies/course/$i" >>"$FZF_CACHE"
+			done
+			mpv --really-quiet --autofit=90% $(sed "" "$FZF_CACHE") >/dev/null 2>/dev/null &
+		else
+			echo "😢 not movie selected!"
+		fi
+		sleep 0.01 &&
+			echo "" >"$FZF_CACHE"
+	else
+		echo "😢 no menu selected"
+	fi
+}
+
+preview

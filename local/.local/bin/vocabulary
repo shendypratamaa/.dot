@@ -1,0 +1,30 @@
+#!/bin/bash
+
+VOCSTORE="$HOME/Documents/data/vocabulary.txt"
+
+MENU=$(
+	echo -e "Add-Vocabulary\nFind-Vocabulary" |
+		fzf --prompt="Select opts > "
+)
+
+case $MENU in
+	Add-Vocabulary)
+		echo -e "add new word : \c"; read -r word
+		echo -e "what the meaning of word : \c"; read -r mean
+		if [ "$word" != "" ] && [ "$mean" != "" ]; then
+			echo "word : $word | mean: $mean" >>"$VOCSTORE"
+			echo "word : $word | mean: $mean successfully added 🌸"
+		else
+			echo "word and mean cannot be empty"
+		fi
+		;;
+	Find-Vocabulary)
+		(
+			sed "" "$VOCSTORE" |
+				fzf --prompt="Find Vocabulary > "
+		)
+		;;
+	*)
+		echo "no menu selected"
+		;;
+esac

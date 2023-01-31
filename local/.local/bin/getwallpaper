@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# WALLHAVEN DOWNLOADER
+# ===========================================================================
+# Title: wallpaper images downloader
+# Author: [shendy-pratama] <shendypratamaa@gmail.com>
+# Findme: [https://github.com/shendypratamaa]
+# ===========================================================================
+# Requirement:
+# fzf [https://github.com/junegunn/fzf]
+# curl
+# wget
+# lf [optional]
+# sed [macos] >>> not tested with [gnu-sed] || maybe works ?
+# ===========================================================================
+# OS: MacOS Ventura 13.1
+# ===========================================================================
+
+WALLDIR="$HOME/Pictures/save"
+TAGOPTIONS="#4K\n#nature\n#minimalism\n#cyberpunk\n#futuristic\n#landscape\n#pixel art\n#artwork\n#digital art\n#science fiction\n#fantasy art\n#astronaut"
+
+if [ -z "$1" ]; then
+	QUERY=$(echo -e "$TAGOPTIONS" | fzf --prompt="Search Wallpaper > ")
+else
+	QUERY="${*:1}"
+fi
+
+SORTINGOPTS="date_added\nrelevance\nrandom\nviews\nfavorites\ntoplist"
+SORTING=$(echo -e "$SORTINGOPTS" | fzf --prompt="Select Options > ")
+
+PAGELENGTH="1\n2\n3\n4\n5"
+PAGE=$(echo -e "$PAGELENGTH" | fzf --prompt="Select Pages > ")
+
+QUERY=$(sed 's/#//g' <<<$QUERY)
+QUERY=$(sed 's/ /+/g' <<<$QUERY)
+echo "$QUERY"
+
+for i in $(seq 1 $PAGE); do
+	DATA=$(curl https://wallhaven.cc/api/v1/search\?atleast\=1920x1080\&ratios\=16x9\&sorting\=$SORTING\&q\=$QUERY\&page\=$i)
+	PAGE=$(echo $DATA | jq '.' | grep -Eoh "https:\/\/w\.wallhaven.cc\/full\/.*(jpg|png)\b")
+	wget -nc -P $WALLDIR $PAGE --no-check-certificate
+done
+
+lf $WALLDIR

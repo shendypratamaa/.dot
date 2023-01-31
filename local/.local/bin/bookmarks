@@ -1,0 +1,65 @@
+#!/bin/bash
+
+# BOOKMARKS
+# ===========================================================================
+# Title: open and add bookmarks
+# Author: [shendy-pratama] <shendypratamaa@gmail.com>
+# Findme: [https://github.com/shendypratamaa]
+# ===========================================================================
+# Requirement:
+# awk
+# fzf [https://github.com/junegunn/fzf]
+# sed [macos] >>> not tested with [gnu-sed] || maybe works ?
+# ===========================================================================
+# OS: MacOS Ventura 13.1
+# ===========================================================================
+
+BOOKMARKS_OPTS=$(echo -e "open-bookmarks\nadd-bookmarks" | fzf --prompt="Fzf Bookmarks >")
+BOOKMARKS_STORE="$HOME/Documents/data/bookmarks-url.txt"
+
+case $BOOKMARKS_OPTS in
+open-bookmarks)
+	SELECT_BOOKMARK=$(
+		sed "" "$BOOKMARKS_STORE" |
+			fzf -m --prompt="Fzf Bookmarks > " |
+			awk '{print $1}'
+	)
+
+	PATTERN=$(echo "$SELECT_BOOKMARK" | grep 'youtube.com/@')
+
+	if [ "$PATTERN" != "" ]; then
+		BOOKYTOPTS=$(
+			echo -e "Videos\nPlaylists\nSearch" |
+				fzf --prompt="Fzf Bookmarks > "
+		)
+		case $BOOKYTOPTS in
+		Videos)
+			open "$SELECT_BOOKMARK/videos"
+			;;
+		Playlists)
+			open "$SELECT_BOOKMARK/palaylists"
+			;;
+		Search)
+			echo -e "Channel Search > \c"
+			read -r ans
+			open "$SELECT_BOOKMARK/search?query=$ans"
+			;;
+		esac
+	else
+		open "$SELECT_BOOKMARK"
+	fi
+	;;
+add-bookmarks)
+	echo -e "Bookmarks Link > \c"
+	read -r ans
+	echo -e "Bookmarks Title > \c"
+	read -r title
+	if [ "$ans" != "" ] || [ "$title" != "" ]; then
+		echo "$ans | $title" >>"$BOOKMARKS_STORE"
+		echo "Bookmark Successfully Added 🌸"
+	else
+		echo "Bookmark link and title cannot be empty 🌸"
+	fi
+	;;
+*) exit ;;
+esac

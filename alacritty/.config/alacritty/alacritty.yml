@@ -1,0 +1,69 @@
+font:
+  normal:
+    family: "JetBrainsMono Nerd Font Mono"
+    style: Regular
+
+  bold:
+    family: "JetBrainsMono Nerd Font Mono"
+    style: Bold
+
+  italic:
+    family: "JetBrainsMono Nerd Font Mono"
+    style: Italic
+
+  size: 14.0
+
+  AppleFontSmoothing: true
+
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+
+window:
+  padding:
+    x: 4
+    y: 0
+  dynamic_title: true
+  dynamic_padding: true
+  opacity: .95
+  decorations: none
+
+ipc_socket: true
+
+key_bindings:
+  - { key: V, mods: Control|Shift, action: Paste }
+  - { key: C, mods: Control|Shift, action: Copy }
+  - { key: Key0, mods: Control, action: ResetFontSize }
+  - { key: Equals, mods: Control, action: IncreaseFontSize }
+  - { key: Minus, mods: Control, action: DecreaseFontSize }
+
+# BEGIN ACE
+colors:
+  primary:
+    background: '#0b0b0d'
+    foreground: '#cfd9da'
+  cursor:
+    text:       '#0b0b0d'
+    cursor:     '#cfd9da'
+  normal:
+    black:      '#0b0b0d'
+    red:        '#204b62'
+    green:      '#2d6186'
+    yellow:     '#b8603d'
+    blue:       '#2f6c8e'
+    magenta:    '#4badc3'
+    cyan:       '#73c0d0'
+    white:      '#cfd9da'
+  bright:
+    black:      '#909798'
+    red:        '#204b62'
+    green:      '#2d6186'
+    yellow:     '#b8603d'
+    blue:       '#2f6c8e'
+    magenta:    '#4badc3'
+    cyan:       '#73c0d0'
+    white:      '#cfd9da'
+# END ACE

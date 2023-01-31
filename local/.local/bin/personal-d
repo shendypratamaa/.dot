@@ -1,0 +1,106 @@
+#!/bin/bash
+
+# PERSONAL-[DOWNLOADLY]
+# ===========================================================================
+# Title: paid course downloader
+# Author: [shendy-pratama] <shendypratamaa@gmail.com>
+# Findme: [https://github.com/shendypratamaa]
+# ===========================================================================
+# Requirement:
+# curl, wget, sed, awk, fzf, pup
+# ===========================================================================
+# OS: MacOS Ventura 13.1
+# ===========================================================================
+
+__help() {
+cat <<-_EOF_
+👋 hi
+
+📓 this scripts will download paid course (premium course) for free,
+you can directly access their website at https://downloadly.ir/ ,
+but for me i have issue, with this website, language arabic base 😢
+
+📓 what this scripts provide, you can interact with their website [download]
+without go to their website, just run this script and type title video
+what u want to download, if the result found this script will prompt you
+to select video list and the next step is to ge part of link download
+each video on their website split into rar, you must download each part of it
+
+🟢 Favorite Premium Course : vim fundamentals
+🔥 check it, maybe you interested to 🔥
+
+🔴 NOTES :
+replace this script based on your machine
+first access their website https://downloadly.ir/
+go inspect browser > tab networks > refresh > copy to curls and paste
+and find parameter script like this
+🟡 > curl -s "https://downloadly.ir/?s=" -H "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:108.0) Gecko/20100101 Firefox/108.0" <
+
+🟡 cmd : personal-d -> search title > select elearning if available [ctrl-o:openinbrowser] > get the link > download 🏁
+
+🔴 REQUIREMENT :
+curl, wget, sed, awk, fzf, pup
+
+🔥 that it, happy learning 🔥
+_EOF_
+}
+
+TMPFILE="$HOME/.cache/user/tmp.html"
+
+[[ "$HOME/.cache/user" = "" ]] && mkdir "$HOME/.cache/user" || 2>/dev/null
+
+__downloadly(){
+    echo -e "what you want to download > \c"; read -r ans; ans="$(sed 's/ /-/'<<<$ans)"
+    [ -z "$ans" ] && echo "😢 woops, your not insert a title!"
+    [ "$ans" != "" ] && curl -s "https://downloadly.ir/?s=$ans" -H "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:108.0) Gecko/20100101 Firefox/108.0" > "$TMPFILE"
+    [ -f "$TMPFILE" ] && LIST_ELEARNING=$(
+        sed "" "$TMPFILE" |
+        pup 'h2, :contains("https://downloadly.ir/elearning/video-tutorials")' |
+        grep "$ans" 2>/dev/null |
+        sed -n '1!p' |
+        awk -F '"' '{print $2}'
+        )
+    if [ "$LIST_ELEARNING" != "" ]; then
+        SELECT_LIST_LEARNING=$(
+            echo "$LIST_ELEARNING" |
+            fzf --prompt="Select Link Video > " \
+                --header="CTRL-O: Open Link in Browser" \
+                --bind="ctrl-o:execute-silent(print {} | open {1})" |
+                awk '{print $1}'
+                )
+        if [ "$SELECT_LIST_LEARNING" != "" ]; then
+            GET_LINK=$(
+                curl -s "$SELECT_LIST_LEARNING" |
+                grep https |
+                grep Downloadly |
+                grep rar |
+                awk -F '"' '{print $2}'
+                )
+            SELECT_LINK=$(
+                echo "$GET_LINK" |
+                fzf -m --prompt="Select Link Download > "
+                )
+            if [ "$SELECT_LINK" != "" ]; then
+                clear
+                echo "Download Video :" "$SELECT_LIST_LEARNING"
+                for LINK in ${SELECT_LINK}
+                do
+                    wget -P "$HOME/Downloads" "$LINK"
+                done
+            else
+                echo "😢 woops, your not selected the link!"
+            fi
+        else
+            echo "😢 woops, your not selected the link!"
+        fi
+    fi
+    rm -f "$TMPFILE"
+}
+
+if [ -z "$1" ]; then
+    __downloadly
+    exit
+elif [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
+    __help
+    exit
+fi

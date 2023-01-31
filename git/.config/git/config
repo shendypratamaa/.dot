@@ -1,0 +1,14 @@
+[user]
+	name = shendypratamaa
+	email = shendypratamaa@gmail.com
+
+[http]
+	postBuffer = 157286400
+	sslVerify = true
+	sslCAInfo = /etc/ssl/cert.pem
+
+[credential]
+	helper = cache
+
+[pull]
+	rebase = false
