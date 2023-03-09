@@ -30,6 +30,9 @@ cmd open ${{
                mpv --really-quiet --autofit=30% $fx 2>/dev/null &
             fi
             ;;
+        audio/*)
+            open -a Music.app $fx
+            ;;
         image/*) qlmanage -p $fx >/dev/null 2>/dev/null ;;
         application/pdf) zathura $fx >/dev/null 2>/dev/null & ;;
     esac

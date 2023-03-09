@@ -26,7 +26,7 @@ if [ -x "$FD" ] && [ -x "$FZF" ] && [ -x "$SED" ]; then
 
 		SYSTEMAPPLICATION_EXCLUDE="												\
 			--exclude=Chess.app --exclude=Stocks.app --exclude=Podcasts.app		\
-			--exclude=News.app --exclude=Music.app --exclude=Dictionary.app		\
+			--exclude=News.app --exclude=Dictionary.app		\
 			--exclude=Home.app --exclude=TV.app --exclude=Utilities			    \
 			--exclude=Stickies.app --exclude=Shortcuts.app --exclude=Notes.app	\
 			--exclude=Preview.app --exclude=TextEdit.app						\
@@ -71,10 +71,10 @@ if [ -x "$FD" ] && [ -x "$FZF" ] && [ -x "$SED" ]; then
 		Terminal* | Screenshot*)
 			open -a "/System/Applications/Utilities/$SELECT"
 			;;
-		Automator* | Books* | Calculator* | Calendar* | Contact* | Clock* | FaceTime* | FindMy* | Freeform* | Launchpad* | Maps* | Mail* | Messages* | Photos* | Reminders* | Siri* | VoiceMemos* | Weather*)
+		Automator* | Books* | Calculator* | Calendar* | Contact* | Clock* | FaceTime* | FindMy* | Freeform* | Launchpad* | Maps* | Mail* | Music* | Messages* | Photos* | Reminders* | Siri* | VoiceMemos* | Weather*)
 			open -a "/System/Applications/$SELECT"
 			;;
-		Alacritty* | AltTab* | Firefox* | Karabiner-Elements* | karabiner-EventViewer* | Safari*)
+		Alacritty* | AltTab* | Firefox* | Karabiner-Elements* | karabiner-EventViewer* | Safari* | RunJS* | WhatsApp*)
 			open -a "/Applications/$SELECT"
 			;;
 		Browser-surf | Bookmarks | Kill-process | Emoji | Vocabulary)
