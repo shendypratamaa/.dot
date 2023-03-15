@@ -262,3 +262,6 @@ export GOPATH="$XDG_DATA_HOME/go"
 
 # GNUPG
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+
+# REPL
+export NODE_REPL_HISTORY="$XDG_DATA_HOME/node/node_repl_history"
