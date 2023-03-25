@@ -1,6 +1,6 @@
 {
     "workbench.layoutControl.enabled": false,
-    "workbench.colorTheme": "Wal",
+    "workbench.colorTheme": "Rosé Pine",
     "workbench.editor.showTabs": false,
     "workbench.sideBar.location": "right",
     "workbench.iconTheme": "material-icon-theme",
@@ -15,6 +15,8 @@
     "window.commandCenter": false,
 
     "files.eol": "\r\n",
+    "files.insertFinalNewline": false,
+    "files.trimFinalNewlines": false,
     "files.trimTrailingWhitespace": true,
     "files.watcherExclude": {
         "**/.git/objects/**": true,
@@ -57,7 +59,7 @@
         "javascript": "javascriptreact"
     },
 
-    "prettier.endOfLine": "crlf",
+    "prettier.endOfLine": "lf",
     "prettier.tabWidth": 4,
     "prettier.useTabs": false,
 
@@ -130,7 +132,9 @@
         "**/venv": true
     },
 
-    "code-eol.color": "#282828",
+    "code-eol.color": "#222222",
     "telemetry.telemetryLevel": "off",
-    "importCost.bundleSizeColoring": "compressed"
+    "importCost.bundleSizeColoring": "compressed",
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "window.zoomLevel": 1
 }

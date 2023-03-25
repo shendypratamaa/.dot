@@ -1,59 +1,59 @@
 [
-  {
-    "key": "cmd+n",
-    "command": "workbench.view.explorer"
-  },
-  {
-    "key": "cmd+n",
-    "command": "-workbench.view.explorer"
-  },
-  {
-    "key": "cmd+n",
-    "command": "workbench.action.toggleSidebarVisibility",
-    "when": "explorerViewletVisible"
-  },
-  {
-    "key": "cmd+n",
-    "command": "-workbench.action.toggleSidebarVisibility",
-    "when": "explorerViewletVisible"
-  },
-  {
-    "key": "cmd+shift+e",
-    "command": "extension.advancedNewFile"
-  },
-  {
-    "key": "ctrl+f",
-    "command": "editor.action.formatDocument"
-  },
-  {
-    "key": "ctrl+j",
-    "command": "selectNextSuggestion",
-    "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
-  },
-  {
-    "key": "ctrl+k",
-    "command": "selectPrevSuggestion",
-    "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
-  },
-  {
-    "key": "shift+k",
-    "command": "editor.action.showHover"
-  },
-  {
-    "key": "ctrl+shift+j",
-    "command": "editor.action.moveLinesDownAction"
-  },
-  {
-    "key": "ctrl+shift+k",
-    "command": "editor.action.moveLinesUpAction",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+\\",
-    "command": "workbench.action.terminal.toggleTerminal"
-  },
-  {
-    "key": "cmd+0"
-    "command": ""
-  }
+    {
+        "key": "cmd+n",
+        "command": "workbench.view.explorer"
+    },
+    {
+        "key": "cmd+n",
+        "command": "-workbench.view.explorer"
+    },
+    {
+        "key": "cmd+n",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "explorerViewletVisible"
+    },
+    {
+        "key": "cmd+n",
+        "command": "-workbench.action.toggleSidebarVisibility",
+        "when": "explorerViewletVisible"
+    },
+    {
+        "key": "cmd+shift+e",
+        "command": "extension.advancedNewFile"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "editor.action.formatDocument"
+    },
+    {
+        "key": "down",
+        "command": "selectNextSuggestion",
+        "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+    },
+    {
+        "key": "up",
+        "command": "selectPrevSuggestion",
+        "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "editor.action.showHover"
+    },
+    {
+        "key": "ctrl+shift+j",
+        "command": "editor.action.moveLinesDownAction"
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "editor.action.moveLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+\\",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "cmd+0",
+        "command": "editor.action.fontZoomReset"
+    }
 ]
