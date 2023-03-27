@@ -1,18 +1,9 @@
 {
-    "workbench.layoutControl.enabled": false,
     "workbench.colorTheme": "Rosé Pine",
     "workbench.editor.showTabs": false,
     "workbench.sideBar.location": "right",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.startupEditor": "none",
-    "editor.lineNumbers": "relative",
-    "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
-    "editor.fontSize": 16,
-    "editor.fontLigatures": true,
-    "editor.rulers": [80],
-    "editor.minimap.enabled": false,
-
-    "window.commandCenter": false,
 
     "files.eol": "\r\n",
     "files.insertFinalNewline": false,
@@ -27,6 +18,12 @@
         "env-*": true
     },
 
+    "editor.lineNumbers": "relative",
+    "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
+    "editor.fontSize": 16,
+    "editor.fontLigatures": true,
+    "editor.rulers": [80],
+    "editor.minimap.enabled": false,
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -108,10 +105,6 @@
         {
             "before": ["s", "v"],
             "commands": ["workbench.action.splitEditor"]
-        },
-        {
-            "before": ["]", "f"],
-            "commands": ["workbench.action.quickOpen"]
         }
     ],
     "vim.visualModeKeyBindings": [
@@ -132,9 +125,9 @@
         "**/venv": true
     },
 
-    "code-eol.color": "#222222",
+    "code-eol.color": "#dfdad9",
     "telemetry.telemetryLevel": "off",
     "importCost.bundleSizeColoring": "compressed",
     "terminal.integrated.defaultProfile.osx": "zsh",
-    "window.zoomLevel": 1
+    "workbench.layoutControl.enabled": false
 }

@@ -28,7 +28,7 @@ window:
     y: 0
   dynamic_title: true
   dynamic_padding: true
-  opacity: .95
+  opacity: 1
   decorations: none
 
 ipc_socket: true
@@ -40,30 +40,45 @@ key_bindings:
   - { key: Equals, mods: Control, action: IncreaseFontSize }
   - { key: Minus, mods: Control, action: DecreaseFontSize }
 
-# BEGIN ACE
+#ROSE-PINE
 colors:
   primary:
-    background: '#0b0b0d'
-    foreground: '#cfd9da'
+    background: "0x191724"
+    foreground: "0xe0def4"
   cursor:
-    text:       '#0b0b0d'
-    cursor:     '#cfd9da'
+    text: "0xe0def4"
+    cursor: "0x524f67"
+  vi_mode_cursor:
+    text: "0xe0def4"
+    cursor: "0x524f67"
+  line_indicator:
+    foreground: None
+    background: None
+  selection:
+    text: "0xe0def4"
+    background: "0x403d52"
   normal:
-    black:      '#0b0b0d'
-    red:        '#204b62'
-    green:      '#2d6186'
-    yellow:     '#b8603d'
-    blue:       '#2f6c8e'
-    magenta:    '#4badc3'
-    cyan:       '#73c0d0'
-    white:      '#cfd9da'
+    black: "0x26233a"
+    red: "0xeb6f92"
+    green: "0x31748f"
+    yellow: "0xf6c177"
+    blue: "0x9ccfd8"
+    magenta: "0xc4a7e7"
+    cyan: "0xebbcba"
+    white: "0xe0def4"
   bright:
-    black:      '#909798'
-    red:        '#204b62'
-    green:      '#2d6186'
-    yellow:     '#b8603d'
-    blue:       '#2f6c8e'
-    magenta:    '#4badc3'
-    cyan:       '#73c0d0'
-    white:      '#cfd9da'
-# END ACE
+    black: "0x6e6a86"
+    red: "0xeb6f92"
+    green: "0x31748f"
+    yellow: "0xf6c177"
+    blue: "0x9ccfd8"
+    magenta: "0xc4a7e7"
+    cyan: "0xebbcba"
+    white: "0xe0def4"
+  hints:
+    start:
+      foreground: "#908caa"
+      background: "#1f1d2e"
+    end:
+      foreground: "#6e6a86"
+      background: "#1f1d2e"
