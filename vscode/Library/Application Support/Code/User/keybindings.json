@@ -26,17 +26,17 @@
         "command": "editor.action.formatDocument"
     },
     {
-        "key": "down",
+        "key": "ctrl+j",
         "command": "selectNextSuggestion",
         "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
     },
     {
-        "key": "up",
+        "key": "ctrl+k",
         "command": "selectPrevSuggestion",
         "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
     },
     {
-        "key": "ctrl+k",
+        "key": "ctrl+m",
         "command": "editor.action.showHover"
     },
     {

@@ -44,6 +44,7 @@ yabai -m rule --add label="karabiner-event-viewer" app="^Karabiner-EventViewer" 
 yabai -m rule --add label="alt-tab" app="^AltTab" manage=off
 yabai -m rule --add label="mvp" app="^mpv" manage=off
 yabai -m rule --add label="Music" app="^Music" manage=off
+yabai -m rule --add label="Skype" app="^Skype" manage=off
 
 # RULES WINDOW
 # yabai -m rule --add app="^(kitty|alacritty|terminal)$" space=1

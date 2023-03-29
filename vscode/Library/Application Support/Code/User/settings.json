@@ -4,8 +4,10 @@
     "workbench.sideBar.location": "right",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.startupEditor": "none",
+    "workbench.layoutControl.enabled": false,
 
     "files.eol": "\r\n",
+    "files.autoSave": "onWindowChange",
     "files.insertFinalNewline": false,
     "files.trimFinalNewlines": false,
     "files.trimTrailingWhitespace": true,
@@ -18,6 +20,7 @@
         "env-*": true
     },
 
+    "editor.renderWhitespace": "none",
     "editor.lineNumbers": "relative",
     "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
     "editor.fontSize": 16,
@@ -125,9 +128,8 @@
         "**/venv": true
     },
 
-    "code-eol.color": "#dfdad9",
+    "code-eol.color": "#524f67",
     "telemetry.telemetryLevel": "off",
     "importCost.bundleSizeColoring": "compressed",
-    "terminal.integrated.defaultProfile.osx": "zsh",
-    "workbench.layoutControl.enabled": false
+    "terminal.integrated.defaultProfile.osx": "zsh"
 }

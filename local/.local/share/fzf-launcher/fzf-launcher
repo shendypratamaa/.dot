@@ -74,7 +74,7 @@ if [ -x "$FD" ] && [ -x "$FZF" ] && [ -x "$SED" ]; then
 		Automator* | Books* | Calculator* | Calendar* | Contact* | Clock* | FaceTime* | FindMy* | Freeform* | Launchpad* | Maps* | Mail* | Music* | Messages* | Photos* | Reminders* | Siri* | VoiceMemos* | Weather*)
 			open -a "/System/Applications/$SELECT"
 			;;
-		Alacritty* | AltTab* | Firefox* | Karabiner-Elements* | karabiner-EventViewer* | Safari* | RunJS* | WhatsApp* | Spotify*)
+		Alacritty* | AltTab* | Firefox* | Karabiner-Elements* | karabiner-EventViewer* | Safari* | RunJS* | WhatsApp* | Spotify* | Skype*)
 			open -a "/Applications/$SELECT"
 			;;
 		Browser-surf | Bookmarks | Kill-process | Emoji | Vocabulary)
