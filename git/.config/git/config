@@ -1,14 +1,32 @@
 [user]
-	name = shendypratamaa
-	email = shendypratamaa@gmail.com
+    name = shendypratamaa
+    email = shendypratamaa@gmail.com
 
 [http]
-	postBuffer = 157286400
-	sslVerify = true
-	sslCAInfo = /etc/ssl/cert.pem
+    postBuffer = 157286400
+    sslVerify = true
+    sslCAInfo = /etc/ssl/cert.pem
 
 [credential]
-	helper = cache
+    helper = cache
 
 [pull]
-	rebase = false
+    rebase = false
+
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+    light = false
+    side-by-side = true
+    line-numbers = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default

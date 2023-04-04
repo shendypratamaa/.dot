@@ -169,7 +169,7 @@ export FZF_COMPLETION_TRIGGER="**"
 # FZF DEFAULT OPTS
 export FZF_DEFAULT_OPTS="\
 --height=50% --margin=0,1 --reverse --border=sharp --inline-info --preview-window='border-sharp' \
---bind=ctrl-u:preview-page-up,ctrl-f:preview-page-down \
+--bind up:preview-page-up,down:preview-page-down \
 "
 
 # FZF OPTS EXCLUDE DIR
@@ -226,6 +226,10 @@ alias vs="
         awk '{print $2}' |
         xargs -r $EDITOR -c 'cd %:h'
     "
+
+function gb() {
+    git checkout $(git branch | fzf --prompt='Git Branch > ')
+}
 
 # TMUX
 alias ta='tmux attach -t'

@@ -1,17 +1,21 @@
-git:
-  paging:
-    colorArg: always
-    pager: delta --dark --paging=never
-
-  showFileTree:       true
-  showListFooter:     false
-  showRandomTip:      false
-  showBottomLine:     false
-  showCommandLog:     true
-  showIcons:          true
-
 disableStartupPopups: true
-notARepository:       'skip'
-os:
-  editCommand:        'nvim'
 
+gui:
+    windowSize: 'normal'
+    sidePanelWidth: 0.2
+
+git:
+    paging:
+        colorArg: always
+        pager: delta --dark --paging=never
+
+    showFileTree: true
+    showListFooter: false
+    showRandomTip: false
+    showBottomLine: false
+    showCommandLog: true
+    showIcons: true
+
+os:
+    openCommand: 'open {{filename}}'
+    editCommand: 'nvim'
