@@ -22,7 +22,7 @@
 [delta]
     navigate = true
     light = false
-    side-by-side = true
+    side-by-side = false
     line-numbers = true
 
 [merge]
@@ -30,3 +30,9 @@
 
 [diff]
     colorMoved = default
+
+[pretty]
+    dateline = format:%C(yellow bold)%h%d%Creset %C(green bold)(%cr)%Creset %C(red)%cn%Creset %n %x09 %C(bold)%s%Creset
+
+[format]
+    pretty = dateline

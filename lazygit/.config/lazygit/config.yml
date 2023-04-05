@@ -2,7 +2,7 @@ disableStartupPopups: true
 
 gui:
     windowSize: 'normal'
-    sidePanelWidth: 0.2
+    sidePanelWidth: 0.3333
 
 git:
     paging:
