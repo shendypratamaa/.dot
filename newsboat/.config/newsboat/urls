@@ -4,10 +4,11 @@
 https://lifehacker.com/rss
 "---BLOG---"
 https://lukesmith.xyz/index.xml
-https://bugswriter.com/blog/atom.xml "~Bugswriter Webpages"
 https://vkc.sh/feed "~Veronica Webpages"
 https://feeds.feedblitz.com/baeldung/linux
-"---UNIX---"
+http://vimcasts.org/feeds/ogg.rss
+https://medium.com/feed/@_ericelliott
+"--YOUTUBE UNIX---"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCngn7SVujlvskHRvRKc1cTw
 https://www.youtube.com/feeds/videos.xml?channel_id=UCkf4VIqu3Acnfzuk3kRIFwA
 https://www.youtube.com/feeds/videos.xml?channel_id=UC7YOGHUfC1Tb6E4pudI9STA
@@ -15,12 +16,12 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA
 https://www.youtube.com/feeds/videos.xml?channel_id=UC8ENHE5xdFSwx71u3fDH5Xw
 https://www.youtube.com/feeds/videos.xml?channel_id=UCUyeluBRhGPCW4rPe_UvBZQ
 https://www.youtube.com/feeds/videos.xml?channel_id=UCMiyV_Ib77XLpzHPQH_q0qQ
-https://www.youtube.com/feeds/videos.xml?channel_id=UCTBGXCJHORQjivtgtMsmkAQ
-"---WEBDEV---"
+"---YOUTUBE WEBDEV---"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCHa8J-xnRYOg5VuudfWpBgg
 https://www.youtube.com/feeds/videos.xml?channel_id=UCmXmlB4-HJytD7wek0Uo97A
 https://www.youtube.com/feeds/videos.xml?channel_id=UCAbA0FivNSBqTmyYrh6uymQ
 https://www.youtube.com/feeds/videos.xml?channel_id=UCEDkO7wshcDZ7UZo17rPkzQ
+https://www.youtube.com/feeds/videos.xml?channel_id=UCTBGXCJHORQjivtgtMsmkAQ
 "---REDDIT---"
 http://inline-reddit.com/feed/?subreddit=MacOS "~Reddit/r/MacOS"
 http://inline-reddit.com/feed/?subreddit=Neovim "~Reddit/r/Neovim"

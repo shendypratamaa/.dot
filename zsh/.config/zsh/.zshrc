@@ -167,7 +167,7 @@ export FZF_COMPLETION_TRIGGER="**"
 # FZF DEFAULT OPTS
 export FZF_DEFAULT_OPTS="\
 --height=50% --margin=0,1 --reverse --border=sharp --inline-info --preview-window='border-sharp' \
---bind up:preview-page-up,down:preview-page-down \
+--bind ctrl-f:preview-page-down,ctrl-b:preview-page-up \
 "
 
 # FZF OPTS EXCLUDE DIR
