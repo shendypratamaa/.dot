@@ -13,8 +13,12 @@
 [pull]
     rebase = false
 
+[gpg]
+    program = /opt/homebrew/bin/gpg
+
 [core]
     pager = delta
+    editor = nvim
 
 [interactive]
     diffFilter = delta --color-only
