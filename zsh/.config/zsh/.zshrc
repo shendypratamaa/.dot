@@ -40,6 +40,7 @@ alias c-tmux="$EDITOR ~/.config/tmux/tmux.conf"
 alias c-alt="$EDITOR ~/.config/alacritty/alacritty.yml"
 alias c-kitty="$EDITOR ~/.config/kitty/kitty.conf"
 alias c-pipe="$EDITOR ~/.config/pipe-viewer/pipe-viewer.conf"
+alias c-vim="vi ~/.vimrc"
 
 # BASIC ALIAS
 alias src="exec $SHELL"
