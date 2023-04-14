@@ -1,0 +1,25 @@
+#!/bin/bash
+
+bundle() {
+	BREWFILE="$HOME/.config/brewfile/brewfile"
+	brew bundle dump --force --file="$BREWFILE" | bat "$BREWFILE"
+}
+
+update() {
+	clean &&
+		brew update &&
+		brew upgrade &&
+		brew cleanup --prune=all &&
+		brew autoremove &&
+		brew info &&
+		brew doctor &&
+		sleep 0.01
+}
+
+if [ "$1" == "u" ]; then
+	update
+elif [ "$1" == "b" ]; then
+	bundle
+else
+	echo "[command] [opts] ? [u]update : [b]undle"
+fi
