@@ -1,0 +1,12 @@
+#!/bin/bash
+
+mon() {
+	nodemon -x 'clear;node' "$1"
+}
+
+if [[ $1 == "" ]]; then
+	FILE=$(cmd "$(pwd)/package.json" | grep -i 'main' | awk -F '"' '{print $4}')
+	mon "./$FILE"
+else
+	mon "$1"
+fi
