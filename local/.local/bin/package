@@ -2,7 +2,7 @@
 
 bundle() {
 	BREWFILE="$HOME/.config/brewfile/brewfile"
-	brew bundle dump --force --file="$BREWFILE" | bat "$BREWFILE"
+	brew bundle dump --force --file="$BREWFILE" && bat "$BREWFILE"
 }
 
 update() {

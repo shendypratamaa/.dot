@@ -48,9 +48,9 @@ elif [ "$SELECT_SEARCH" = "devto" ]; then
 	open "$URL"
 elif [ "$SELECT_SEARCH" = "freecodecamp" ]; then
 	echo -e " freecodecamp search : \c"; read -r ans
-	URL=" https://freecodecamp.org/news/search/?query=$ans"
+	URL="https://freecodecamp.org/news/search/?query=$ans"
 	open "$URL"
 elif [ "$SELECT_SEARCH" = "open-url" ]; then
 	echo -e " open url search : \c"; read -r ans
-	open "$ans"
+	open "https://$ans"
 fi
