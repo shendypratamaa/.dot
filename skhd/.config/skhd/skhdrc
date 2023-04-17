@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # DISABLE SHIT MACOS
-cmd - m:
 fn  - h:
 
 # open broweser

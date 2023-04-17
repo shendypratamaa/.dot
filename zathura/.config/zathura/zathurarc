@@ -35,7 +35,7 @@ set completion-fg '#cfd9da'
 set completion-bg '#0b0b0d'
 
 # Command line completion group elements
-set completion-group-fg '#2d6186'
+set completion-group-fg '#545B60'
 set completion-group-bg '#0b0b0d'
 
 # Current command line completion element
@@ -55,11 +55,11 @@ set notification-bg '#0b0b0d'
 
 # Error notification
 set notification-error-fg '#cfd9da'
-set notification-error-bg '#204b62'
+set notification-error-bg '#304754'
 
 # Warning notification
 set notification-warning-fg '#cfd9da'
-set notification-warning-bg '#204b62'
+set notification-warning-bg '#304754'
 
 # Tab - TODO
 # set tabbar-fg
@@ -74,8 +74,8 @@ set statusbar-fg '#cfd9da'
 set statusbar-bg '#0b0b0d'
 
 # Highlighting parts of the document (e.g. show search results)
-set highlight-color '#2d6186'
-set highlight-active-color '#2d6186'
+set highlight-color '#545B60'
+set highlight-active-color '#545B60'
 
 # Represent light/dark colors in recoloring mode
 set recolor-lightcolor rgba(0,0,0,0)

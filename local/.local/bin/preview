@@ -14,7 +14,7 @@
 # ===========================================================================
 
 PICDIR="$HOME/Pictures"
-BOKDIR="$HOME/Documents/ebook"
+BOKDIR="$HOME/Documents/pd/book"
 MOVDIR="$HOME/Movies/course"
 THUMB_VID="$HOME/.cache/user/err.jpg"
 FZF_CACHE="$HOME/.cache/user/preview_fzf.txt"
@@ -52,16 +52,16 @@ preview() {
 	elif [ "$SELECT_MENU" = "books" ]; then
 		SELECT=$(
 			fd . "$BOKDIR" -t f |
-				sed "s/^\/Users\/$(whoami)\/Documents\/ebook/ /;s#/##;s/^[ \t]*//" |
+				sed "s/^\/Users\/$(whoami)\/Documents\/pd\/book/ /;s#/##;s/^[ \t]*//" |
 				fzf --no-sort \
 					--prompt="Select Book > " \
 					--header="CTRL-O:Preview Thumbnail" \
-					--bind="ctrl-o:execute-silent(qlmanage -p $HOME/Documents/ebook/{1})" \
-					--preview="pdftoppm -png -f 1 -l 1 -jpeg -tiffcompression jpeg $HOME/Documents/ebook/{1} |
+					--bind="ctrl-o:execute-silent(qlmanage -p $HOME/Documents/pd/book/{1})" \
+					--preview="pdftoppm -png -f 1 -l 1 -jpeg -tiffcompression jpeg $HOME/Documents/pd/book/{1} |
 								chafa -c full --color-space rgb --clear"
 		)
 		if [ "$SELECT" != "" ]; then
-			zathura "$HOME/Documents/ebook/$SELECT" 2>/dev/null &
+			zathura "$HOME/Documents/pd/book/$SELECT" 2>/dev/null &
 		else
 			echo "😢 no book selected!"
 		fi

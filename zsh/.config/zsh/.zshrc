@@ -35,7 +35,7 @@ fi
 
 # CFG
 alias c-zsh="$EDITOR ~/.config/zsh/.zshrc"
-alias c-zpr="$EDITOR ~/.dotfiles/.zprofile"
+alias c-zpr="$EDITOR ~/.zprofile"
 alias c-tmux="$EDITOR ~/.config/tmux/tmux.conf"
 alias c-alt="$EDITOR ~/.config/alacritty/alacritty.yml"
 alias c-kitty="$EDITOR ~/.config/kitty/kitty.conf"
@@ -63,13 +63,14 @@ alias ppath="echo $PATH | tr ':' '\n'"
 alias gh="open \`git remote -v | grep fetch | awk '{print \$2}' | sed 's/git@/http:\/\//' | sed 's/com:/com\//'\`| head -n1"
 
 # GOTO ALIAS
-alias cdd="cd ~/.dotfiles"
+alias cdd="cd ~/.dot"
 alias cdc="cd ~/.config"
 alias cdn="cd ~/.config/nvim"
 alias cdz="cd ~/.config/zsh"
 alias cde="cd ~/.cache"
 alias cds="cd ~/.local/bin"
 alias cdl="cd ~/.local/share"
+alias cdb="cd ~/Documents/pd"
 
 # PIPE-VIEWER
 alias msv="pipe-viewer --player=mpvv"
