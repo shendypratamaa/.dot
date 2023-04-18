@@ -15,7 +15,7 @@
 # ===========================================================================
 
 BOOKMARKS_OPTS=$(echo -e "open-bookmarks\nadd-bookmarks" | fzf --prompt="Fzf Bookmarks >")
-BOOKMARKS_STORE="$HOME/Documents/data/bookmarks-url.txt"
+BOOKMARKS_STORE="$HOME/Documents/pd/data/bookmarks-url.txt"
 
 case $BOOKMARKS_OPTS in
 open-bookmarks)

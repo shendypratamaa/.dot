@@ -1,10 +1,10 @@
 #!/bin/bash
 
-VOCSTORE="$HOME/Documents/data/vocabulary.txt"
+VOCSTORE="$HOME/Documents/pd/data/vocabulary.txt"
 
 MENU=$(
 	echo -e "Add-Vocabulary\nFind-Vocabulary" |
-		fzf --prompt="Select opts > "
+		fzf --reverse --prompt="Select opts > "
 )
 
 case $MENU in
@@ -21,7 +21,7 @@ case $MENU in
 	Find-Vocabulary)
 		(
 			sed "" "$VOCSTORE" |
-				fzf --prompt="Find Vocabulary > "
+				fzf --reverse --prompt="Find Vocabulary > "
 		)
 		;;
 	*)

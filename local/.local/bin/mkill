@@ -14,10 +14,10 @@
 # ===========================================================================
 
 (date;
-	ps -u $USER -o pid,%cpu,%mem,comm |
+	ps -u "$USER" -o pid,%cpu,%mem,comm |
 	sed -n '1!p' |
 	sort -b -rk3 -r) |
-	fzf --prompt="Kill Process > " \
+	fzf --reverse --prompt="Kill Process > " \
 		--header="CTRL-R: Reload" \
 		--header-lines=1 -m \
 		--bind='ctrl-r:reload(date;

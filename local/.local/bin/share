@@ -17,7 +17,7 @@ SHAREDIR="$HOME/Public"
 
 FILE="$(
 	fd . -H -L -t f |
-		fzf --prompt="select file > " |
+		fzf --reverse --prompt="select file > " |
 		awk '{print $1}'
 )"
 

@@ -23,20 +23,20 @@ preview() {
 	MENU="images\nbooks\nvideos"
 	SELECT_MENU="$(
 		echo -e "$MENU" |
-			fzf --prompt "Select Previewer > " |
+			fzf --reverse --prompt "Select Previewer > " |
 			awk '{print $1}'
 	)"
 	if [ "$SELECT_MENU" = "images" ]; then
 		SELECT=$(
 			fd . "$PICDIR" -L -t f --exclude=Photo\ Booth\ Library --exclude=Photos\ Library.photoslibrary |
 				sed "s/^\/Users\/$(whoami)\/Pictures/ /;s#/##;s/^[ \t]*//" |
-				fzf --no-sort -m \
+				fzf --reverse --no-sort -m \
 					--prompt="Select Image > " \
 					--header="CTRL-D:Delete" \
 					--bind="ctrl-d:reload(
 								rm -f $HOME/Pictures/{1} &&
 									fd . $PICDIR -L -t f --exclude=Photo\ Booth\ Library --exclude=Photos\ Library.photoslibrary |
-									sed 's/^\/Users\/$(whoami)\/Pictures/ /;s#/##;s/^[ \t]*//' )" \
+                                    sed 's/^\/Users\/$(whoami)\/Pictures/ /;s#/##;s/^[ \t]*//' )" \
 					--preview="chafa -c full --color-space rgb --clear -s 100 $HOME/Pictures/{1}"
 		)
 		if [ "$SELECT" != "" ]; then
@@ -53,7 +53,7 @@ preview() {
 		SELECT=$(
 			fd . "$BOKDIR" -t f |
 				sed "s/^\/Users\/$(whoami)\/Documents\/pd\/book/ /;s#/##;s/^[ \t]*//" |
-				fzf --no-sort \
+				fzf --reverse --no-sort \
 					--prompt="Select Book > " \
 					--header="CTRL-O:Preview Thumbnail" \
 					--bind="ctrl-o:execute-silent(qlmanage -p $HOME/Documents/pd/book/{1})" \

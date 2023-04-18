@@ -14,12 +14,12 @@
 
 SEARCHLIST="duckduckgo\ngoogle\nyoutube\nreddit\ngithub\ndevto\nfreecodecamp\nopen-url"
 
+FZF="fzf --reverse --inline-info"
+
 SELECT_SEARCH=$(
 	echo -e $SEARCHLIST |
 		sort |
-		fzf --reverse --margin=0,1 \
-			--inline-info --prompt="Search Something > "
-)
+        $FZF --prompt="Search Something > " )
 
 if [ "$SELECT_SEARCH" = "duckduckgo" ]; then
 	echo -e " duckduckgo search : \c"; read -r ans
@@ -36,8 +36,7 @@ elif [ "$SELECT_SEARCH" = "youtube" ]; then
 elif [ "$SELECT_SEARCH" = "reddit" ]; then
 	SELECT_OPTS=$(
 		echo -e "content\nsubreddit" |
-			fzf --border=sharp --reverse --margin=0,1 \
-				--inline-info --prompt="Reddit > "
+            $FZF --prompt="Reddit > "
 	)
 	if [ "$SELECT_OPTS" = "content" ]; then
 		echo -e " reddit search : \c"; read -r ans
@@ -63,6 +62,6 @@ elif [ "$SELECT_SEARCH" = "freecodecamp" ]; then
 	URL="https://freecodecamp.org/news/search/?query=$ans"
 	open "$URL"
 elif [ "$SELECT_SEARCH" = "open-url" ]; then
-	echo -e "open url search : \c"; read -r ans
+	echo -e " open url search : \c"; read -r ans
 	open "https://$ans"
 fi

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VOCSTORE="$HOME/Documents/data/vocabulary.txt"
+VOCSTORE="$HOME/Documents/pd/data/vocabulary.txt"
 
 MENU=$(
 	echo -e "Add-Vocabulary\nFind-Vocabulary" |

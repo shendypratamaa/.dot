@@ -168,7 +168,7 @@ export FZF_COMPLETION_TRIGGER="**"
 
 # FZF DEFAULT OPTS
 export FZF_DEFAULT_OPTS="\
---height=50% --margin=0,1 --reverse --border=sharp --inline-info --preview-window='border-sharp' \
+--margin=1,2 --border=sharp --inline-info --preview-window='border-sharp' \
 --bind ctrl-f:preview-page-down,ctrl-b:preview-page-up \
 "
 
@@ -211,18 +211,18 @@ bindkey '^D' fzf-cd-widget
 # FZF ALIAS
 alias vd="
     cd ~ && cd \$($FZF_DEFAULT_COMMAND $EXCLUDE_FZF -d 7 --type d |
-        fzf --prompt='Select Directory > ' --preview 'tree -C {}' )
+        fzf --reverse --prompt='Select Directory > ' --preview 'tree -C {}' )
     "
 
 alias vn="
     $FZF_DEFAULT_COMMAND $EXCLUDE_FZF -d 7 --type f |
-        fzf --prompt='Select File > ' -m --preview '$PREVBAT' |
+        fzf --reverse --prompt='Select File > ' -m --preview '$PREVBAT' |
         xargs -r $EDITOR
     "
 
 alias vs="
     fd . $HOME/.local/bin $HOME/.local/share/fzf-launcher $HOME/.local/share/sysutils |
-        fzf --prompt='Select Script File > ' -m --preview '$PREVBAT' |
+        fzf --reverse --prompt='Select Script File > ' -m --preview '$PREVBAT' |
         awk '{print $2}' |
         xargs -r $EDITOR -c 'cd %:h'
     "
