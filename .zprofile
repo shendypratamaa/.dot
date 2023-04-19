@@ -39,6 +39,6 @@ export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
 eval $(pyenv init --path)
 
 # TMUX SESSION
-# if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-#     tmux attach -t || tmux new -s
-# fi
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+    tmux attach -t || tmux new -s
+fi
