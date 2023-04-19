@@ -1,4 +1,5 @@
 # HISTORY FILE
+export HISTFILE=$XDG_CACHE_HOME/zsh/zsh_history
 export HISTSIZE=10000
 export SAVEHIST=10000
 
@@ -138,7 +139,7 @@ function zle-keymap-select {
   fi
 }
 
-zle-line-init() {
+function zle-line-init() {
     zle -K viins
     echo -ne "\e[1 q\033]12;#e3e3e3\007"
 }
@@ -150,11 +151,41 @@ function vi-yank-xclip {
 
 echo -ne '\e[1 q\033]12;#e3e3e3\007'
 
-preexec() { echo -ne '\e[1 q\033]12;#e3e3e3\007' ;}
+function preexec() { echo -ne '\e[1 q\033]12;#e3e3e3\007' ;}
 
 zle -N zle-keymap-select
 zle -N zle-line-init
 zle -N vi-yank-xclip
+
+function update_terminfo () {
+    local x ncdir terms
+    ncdir="/opt/homebrew/opt/ncurses"
+    terms=(alacritty-direct alacritty tmux tmux-256color)
+
+    mkdir -p ~/.terminfo && cd ~/.terminfo
+
+    if [ -d $ncdir ] ; then
+        # sed : fix color for htop
+        for x in $terms ; do
+            $ncdir/bin/infocmp -x -A $ncdir/share/terminfo $x > ${x}.src &&
+            sed -i '' 's|pairs#0x10000|pairs#32767|' ${x}.src &&
+            /usr/bin/tic -x ${x}.src &&
+            rm -f ${x}.src
+        done
+    else
+        local url
+        url="https://invisible-island.net/datafiles/current/terminfo.src.gz"
+        if curl -sfLO $url ; then
+            gunzip -f terminfo.src.gz &&
+            sed -i '' 's|pairs#0x10000|pairs#32767|' terminfo.src &&
+            /usr/bin/tic -xe ${(j:,:)terms} terminfo.src &&
+            rm -f terminfo.src
+        else
+            echo "unable to download $url"
+        fi
+    fi
+    cd - > /dev/null
+}
 
 # COMPLETIONS, KEYBINDING FZF
 source $(brew --prefix)/opt/fzf/shell/completion.zsh
@@ -227,10 +258,6 @@ alias vs="
         xargs -r $EDITOR -c 'cd %:h'
     "
 
-function gb() {
-    git checkout $(git branch | fzf --prompt='Git Branch > ')
-}
-
 # TMUX
 alias ta='tmux attach -t'
 alias tad='tmux attach -d -t'
@@ -270,32 +297,3 @@ export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 # REPL
 export NODE_REPL_HISTORY="$XDG_DATA_HOME/node/node_repl_history"
 
-update_terminfo () {
-    local x ncdir terms
-    ncdir="/opt/homebrew/opt/ncurses"
-    terms=(alacritty-direct alacritty tmux tmux-256color)
-
-    mkdir -p ~/.terminfo && cd ~/.terminfo
-
-    if [ -d $ncdir ] ; then
-        # sed : fix color for htop
-        for x in $terms ; do
-            $ncdir/bin/infocmp -x -A $ncdir/share/terminfo $x > ${x}.src &&
-            sed -i '' 's|pairs#0x10000|pairs#32767|' ${x}.src &&
-            /usr/bin/tic -x ${x}.src &&
-            rm -f ${x}.src
-        done
-    else
-        local url
-        url="https://invisible-island.net/datafiles/current/terminfo.src.gz"
-        if curl -sfLO $url ; then
-            gunzip -f terminfo.src.gz &&
-            sed -i '' 's|pairs#0x10000|pairs#32767|' terminfo.src &&
-            /usr/bin/tic -xe ${(j:,:)terms} terminfo.src &&
-            rm -f terminfo.src
-        else
-            echo "unable to download $url"
-        fi
-    fi
-    cd - > /dev/null
-}

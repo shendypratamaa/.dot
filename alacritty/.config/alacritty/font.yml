@@ -1,0 +1,23 @@
+font:
+    normal:
+        family: 'JetBrainsMono Nerd Font Mono'
+        style: Regular
+
+    bold:
+        family: 'JetBrainsMono Nerd Font Mono'
+        style: Bold
+
+    italic:
+        family: 'JetBrainsMono Nerd Font Mono'
+        style: Italic
+
+    size: 15.0
+
+    AppleFontSmoothing: true
+
+    offset:
+        x: 0
+        y: 0
+    glyph_offset:
+        x: 0
+        y: 0
