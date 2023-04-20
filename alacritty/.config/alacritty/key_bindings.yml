@@ -6,6 +6,10 @@ key_bindings:
     - { key: Key0,   mods: Control,       action: ResetFontSize    }
     - { key: Key6,   mods: Control,       chars: "\x1e"            } # C-^
 
+    # CTRL - ENTER | ALT - ENTER
+    - { key: Return,   mods: Shift,   chars: "\x1b[13;2u" }
+    - { key: Return,   mods: Control, chars: "\x1b[13;5u" }
+
     # https://github.com/alacritty/alacritty/issues/62
     # Option as Alt (MACOS)
 
@@ -83,4 +87,4 @@ key_bindings:
     # - { key: Key5,      mods: Alt|Shift, chars: "\x1b%"                       } # Alt + %
     # - { key: Key6,      mods: Alt|Shift, chars: "\x1b^"                       } # Alt + ^
     # - { key: Backslash, mods: Alt,       chars: "\x1b\\"                      } # Alt + \
-    # - { key: Backslash, mods: Alt|Shift, chars: "\x1b|"                       } # Alt + |
+    # - { key: Backslash, mods: Alt|Shift, chars: "\x1b|"                        } # Alt + |
