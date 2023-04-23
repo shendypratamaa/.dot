@@ -24,6 +24,10 @@ export TERMINAL="alacritty"
 # BROWSER
 export BROWSER="firefox"
 
+# TERMINFO
+export TERMINFO="$XDG_DATA_HOME/terminfo"
+export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
+
 # LOCAL BIN
 [[ "$PATH" =~ "$HOME/.local/bin" ]] || PATH="$HOME/.local/bin:$PATH"
 [[ "$PATH" =~ "$HOME/.local/share/nvim/mason/bin" ]] || PATH="$HOME/.local/share/nvim/mason/bin:$PATH"

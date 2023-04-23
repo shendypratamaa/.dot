@@ -25,7 +25,7 @@ EXCLUDE_DIR=" \
 "
 
 if [ -x "$GPG" ] && [ -x "$TAR" ]; then
-	FILES="$(fd . | fzf -m --prompt="select files > " | tr ' ' '\n')"
+	FILES="$(fd . | fzf --reverse -m --prompt="select files > " | tr ' ' '\n')"
 	if [ "$FILES" != "" ]; then
 		OPTS=$(echo -e "achieve-only\nachieve-with-gpg" | fzf --prompt="select opts")
 		case $OPTS in

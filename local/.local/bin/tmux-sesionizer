@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
 	selected=$1
 else
-	selected=$(fd -p ~/ ~/project --max-depth 1 --min-depth 1 -L -t d |
+	selected=$(fd -p ~/ ~/Public/project --max-depth 1 -L -t d -E "Drop\ Box" |
 		sort -u |
 		fzf --reverse --inline-info \
             --prompt="New Seasson > ")
