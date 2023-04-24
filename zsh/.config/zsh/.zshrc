@@ -5,7 +5,7 @@ set -o ignoreeof
 # ADD HOMEBREW COMPLETIONS
 FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
-# COMPINIT -> ~/.j
+# COMPINIT -> ~/.cache/zsh
 autoload -U compinit
     compinit -d "$XDG_CACHE_HOME/zsh/zcompdump"
     compinit -d "$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
@@ -14,31 +14,22 @@ _comp_options+=(globdots)
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 
-# ZSH UTILS
-source $HOME/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $HOME/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# LOAD UTILS
+source ~/.config/zsh/utils.zsh
 
-if [[ -d "$HOME/.config/zsh/plugins/zsh-syntax-highlighting" ]]; then
-    typeset -A ZSH_HIGHLIGHT_STYLES
-    ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=124'
-    ZSH_HIGHLIGHT_STYLES[alias]='fg=048'
-    ZSH_HIGHLIGHT_STYLES[global-alias]='fg=048'
-    ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=048'
-    ZSH_HIGHLIGHT_STYLES[builtin]='fg=048'
-    ZSH_HIGHLIGHT_STYLES[command]='fg=048'
-    ZSH_HIGHLIGHT_STYLES[function]='fg=048'
-    ZSH_HIGHLIGHT_STYLES[command]='fg=048'
-fi
+# SOURCE FILE
+zsh_add_file "prompt.zsh"
+zsh_add_file "export.zsh"
+zsh_add_file "alias.zsh"
+zsh_add_file "vimode.zsh"
+
+# PLUGINS
+zsh_add_plugin "zsh-users/zsh-autosuggestions"
+zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 
 # NVM
 source $HOME/.local/share/nvm/nvm.sh
 
-# COMPLETIONS, KEYBINDING FZF
+# FZF
 source $(brew --prefix)/opt/fzf/shell/completion.zsh
 source $(brew --prefix)/opt/fzf/shell/key-bindings.zsh
-
-# RESOURCES
-source ~/.config/zsh/prompt.zsh
-source ~/.config/zsh/export.zsh
-source ~/.config/zsh/alias.zsh
-source ~/.config/zsh/vimode.zsh
