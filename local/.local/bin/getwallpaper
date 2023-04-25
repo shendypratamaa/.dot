@@ -15,21 +15,22 @@
 # ===========================================================================
 # OS: MacOS Ventura 13.1
 # ===========================================================================
+FZF="fzf --reverse --inline-info"
 
 WALLDIR="$HOME/Pictures/save"
 TAGOPTIONS="#4K\n#nature\n#minimalism\n#cyberpunk\n#futuristic\n#landscape\n#pixel art\n#artwork\n#digital art\n#science fiction\n#fantasy art\n#astronaut"
 
 if [ -z "$1" ]; then
-	QUERY=$(echo -e "$TAGOPTIONS" | fzf --prompt="Search Wallpaper > ")
+	QUERY=$(echo -e "$TAGOPTIONS" | $FZF --prompt="Search Wallpaper > ")
 else
 	QUERY="${*:1}"
 fi
 
 SORTINGOPTS="date_added\nrelevance\nrandom\nviews\nfavorites\ntoplist"
-SORTING=$(echo -e "$SORTINGOPTS" | fzf --prompt="Select Options > ")
+SORTING=$(echo -e "$SORTINGOPTS" | $FZF --prompt="Select Options > ")
 
 PAGELENGTH="1\n2\n3\n4\n5"
-PAGE=$(echo -e "$PAGELENGTH" | fzf --prompt="Select Pages > ")
+PAGE=$(echo -e "$PAGELENGTH" | $FZF --prompt="Select Pages > ")
 
 QUERY=$(sed 's/#//g' <<<$QUERY)
 QUERY=$(sed 's/ /+/g' <<<$QUERY)

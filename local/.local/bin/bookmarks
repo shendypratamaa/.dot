@@ -13,15 +13,16 @@
 # ===========================================================================
 # OS: MacOS Ventura 13.1
 # ===========================================================================
+FZF="fzf --reverse --inline-info"
 
-BOOKMARKS_OPTS=$(echo -e "open-bookmarks\nadd-bookmarks" | fzf --reverse --prompt="Fzf Bookmarks >")
+BOOKMARKS_OPTS=$(echo -e "open-bookmarks\nadd-bookmarks\nedit-bookmarks" | $FZF --prompt="Fzf Bookmarks >")
 BOOKMARKS_STORE="$HOME/Documents/pd/data/bookmarks-url.txt"
 
 case $BOOKMARKS_OPTS in
 open-bookmarks)
 	SELECT_BOOKMARK=$(
 		sed "" "$BOOKMARKS_STORE" |
-			fzf --reverse -m --prompt="Fzf Bookmarks > " |
+			$FZF -m --prompt="Fzf Bookmarks > " |
 			awk '{print $1}'
 	)
 
@@ -30,7 +31,7 @@ open-bookmarks)
 	if [ "$PATTERN" != "" ]; then
 		BOOKYTOPTS=$(
 			echo -e "Videos\nPlaylists\nSearch" |
-				fzf --prompt="Fzf Bookmarks > "
+				$FZF --prompt="Fzf Bookmarks > "
 		)
 		case $BOOKYTOPTS in
 		Videos)
@@ -61,5 +62,8 @@ add-bookmarks)
 		echo "Bookmark link and title cannot be empty 🌸"
 	fi
 	;;
+edit-bookmarks)
+    nvim "$BOOKMARKS_STORE"
+    ;;
 *) exit ;;
 esac

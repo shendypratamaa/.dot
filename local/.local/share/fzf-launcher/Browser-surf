@@ -1,12 +1,13 @@
 #!/bin/bash
+FZF="fzf --reverse --inline-info"
 
 SEARCHLIST="duckduckgo\ngoogle\nyoutube\nreddit\ngithub\ndevto\nfreecodecamp\nopen-url"
 
 SELECT_SEARCH=$(
 	echo -e $SEARCHLIST |
 		sort |
-		fzf --border=sharp --reverse --margin=0,1 \
-			--inline-info --prompt="Fzf Browser Surf > "
+		$FZF --border=sharp --margin=0,1 \
+			 --prompt="Fzf Browser Surf > "
 )
 
 if [ "$SELECT_SEARCH" = "duckduckgo" ]; then
@@ -24,8 +25,8 @@ elif [ "$SELECT_SEARCH" = "youtube" ]; then
 elif [ "$SELECT_SEARCH" = "reddit" ]; then
 	SELECT_OPTS=$(
 		echo -e "content\nsubreddit" |
-			fzf --border=sharp --reverse --margin=0,1 \
-				--inline-info --prompt="Reddit > "
+			$FZF --border=sharp --margin=0,1 \
+				 --prompt="Reddit > "
 	)
 	if [ "$SELECT_OPTS" = "content" ]; then
 		echo -e " reddit search : \c"; read -r ans

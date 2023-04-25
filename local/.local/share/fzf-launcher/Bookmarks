@@ -1,14 +1,15 @@
 #!/bin/bash
+FZF="fzf --reverse --inline-info"
 
-BOOKMARKS_OPTS=$(echo -e "open-bookmarks\nadd-bookmarks" | fzf --reverse --margin=0,1 --inline-info --prompt="Fzf Bookmarks >")
+BOOKMARKS_OPTS=$(echo -e "open-bookmarks\nadd-bookmarks" | $FZF --margin=0,1 --prompt="Fzf Bookmarks >")
 BOOKMARKS_STORE="$HOME/Documents/pd/data/bookmarks-url.txt"
 
 case $BOOKMARKS_OPTS in
 open-bookmarks)
 	SELECT_BOOKMARK=$(
 		sed "" "$BOOKMARKS_STORE" |
-			fzf -m --border=sharp --reverse \
-				--margin=0,1 --inline-info \
+			$FZF -m --border=sharp \
+				--margin=0,1 \
 				--prompt="Fzf Bookmarks > " |
 			awk '{print $1}'
 	)
@@ -18,8 +19,8 @@ open-bookmarks)
 	if [ "$PATTERN" != "" ]; then
 		BOOKYTOPTS=$(
 			echo -e "Videos\nPlaylists\nSearch" |
-				fzf --border=sharp --reverse --margin=0,1 \
-					--inline-info --prompt="Fzf Bookmarks > "
+				$FZF --border=sharp --margin=0,1 \
+					 --prompt="Fzf Bookmarks > "
 		)
 		case $BOOKYTOPTS in
 		Videos)

@@ -1,19 +1,20 @@
 #!/bin/bash
+FZF="fzf --reverse --inline-info"
 
 VOCSTORE="$HOME/Documents/pd/data/vocabulary.txt"
 
 MENU=$(
 	echo -e "Add-Vocabulary\nFind-Vocabulary" |
-		fzf --border=sharp --margin=0,1 --reverse --inline-info \
-			--prompt="Select Menu > "
+		$FZF --prompt="Select opts > "
 )
 
 case $MENU in
 	Add-Vocabulary)
-		echo -e " add new word : \c"; read -r word
-		echo -e " what the meaning of word : \c"; read -r mean
+		echo -e "add new word : \c"; read -r word
+		echo -e "what the meaning of word : \c"; read -r mean
 		if [ "$word" != "" ] && [ "$mean" != "" ]; then
 			echo "word : $word | mean: $mean" >>"$VOCSTORE"
+			echo "word : $word | mean: $mean successfully added 🌸"
 		else
 			echo "word and mean cannot be empty"
 		fi
@@ -21,8 +22,8 @@ case $MENU in
 	Find-Vocabulary)
 		(
 			sed "" "$VOCSTORE" |
-				fzf --border=sharp --margin=0,1 --reverse --inline-info \
-					--prompt="Select Vocabulacry > "
+				$FZF --prompt="Find Vocabulary > " |
+                pbcopy
 		)
 		;;
 	*)

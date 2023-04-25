@@ -14,6 +14,7 @@
 # ===========================================================================
 # OS: MacOS Ventura 13.1
 # ===========================================================================
+FZF="fzf --reverse --inline-info"
 
 GPG=$(which gpg)
 TAR=$(which tar)
@@ -25,9 +26,9 @@ EXCLUDE_DIR=" \
 "
 
 if [ -x "$GPG" ] && [ -x "$TAR" ]; then
-	FILES="$(fd . | fzf --reverse -m --prompt="select files > " | tr ' ' '\n')"
+	FILES="$(fd . | $FZF -m --prompt="Select Files > " --preview="$PREVBAT" | tr ' ' '\n')"
 	if [ "$FILES" != "" ]; then
-		OPTS=$(echo -e "achieve-only\nachieve-with-gpg" | fzf --prompt="select opts")
+		OPTS=$(echo -e "achieve-only\nachieve-with-gpg" | $FZF --prompt="Select Options > ")
 		case $OPTS in
 		achieve-only)
 			echo -e "Achieve Name :\c"; read -r ans
@@ -51,7 +52,7 @@ if [ -x "$GPG" ] && [ -x "$TAR" ]; then
 			;;
 		esac
 		FF_EX=$(fd . | grep 'gz')
-		DIST=$(fd . "$HOME" -H -t d $EXCLUDE_DIR --max-depth=5 | fzf --prompt="select directory > ")
+		DIST=$(fd . "$HOME" -H -t d $EXCLUDE_DIR --max-depth=5 | $FZF --prompt="Select Directory > ")
 		[ "$FF_EX" != "" ] && mv -iv "$FF_EX" "$DIST"
 	fi
 else

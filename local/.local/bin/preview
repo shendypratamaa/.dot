@@ -12,6 +12,7 @@
 # ===========================================================================
 # OS: MacOS Ventura 13.1
 # ===========================================================================
+FZF="fzf --reverse --inline-info"
 
 PICDIR="$HOME/Pictures"
 BOKDIR="$HOME/Documents/pd/book"
@@ -23,14 +24,14 @@ preview() {
 	MENU="images\nbooks\nvideos"
 	SELECT_MENU="$(
 		echo -e "$MENU" |
-			fzf --reverse --prompt "Select Previewer > " |
+			$FZF --prompt "Select Previewer > " |
 			awk '{print $1}'
 	)"
 	if [ "$SELECT_MENU" = "images" ]; then
 		SELECT=$(
 			fd . "$PICDIR" -L -t f --exclude=Photo\ Booth\ Library --exclude=Photos\ Library.photoslibrary |
 				sed "s/^\/Users\/$(whoami)\/Pictures/ /;s#/##;s/^[ \t]*//" |
-				fzf --reverse --no-sort -m \
+				$FZF --no-sort -m \
 					--prompt="Select Image > " \
 					--header="CTRL-D:Delete" \
 					--bind="ctrl-d:reload(
@@ -53,7 +54,7 @@ preview() {
 		SELECT=$(
 			fd . "$BOKDIR" -t f |
 				sed "s/^\/Users\/$(whoami)\/Documents\/pd\/book/ /;s#/##;s/^[ \t]*//" |
-				fzf --reverse --no-sort \
+				$FZF --no-sort \
 					--prompt="Select Book > " \
 					--header="CTRL-O:Preview Thumbnail" \
 					--bind="ctrl-o:execute-silent(qlmanage -p $HOME/Documents/pd/book/{1})" \
@@ -69,7 +70,7 @@ preview() {
 		SELECT=$(
 			fd . "$MOVDIR" -t f |
 				sed "s/^\/Users\/$(whoami)\/Movies\/course/ /;s#/##;s/^[ \t]*//" |
-				fzf --no-sort -m \
+				$FZF --no-sort -m \
 					--prompt="Select Video > " \
 					--preview="ffmpegthumbnailer -t 1% -q 3 -s 0 -c jpeg -i $HOME/Movies/course/{1} -o ${THUMB_VID} |
 								chafa -c full --color-space rgb --clear -s 100 ${THUMB_VID}"

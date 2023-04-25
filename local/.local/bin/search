@@ -11,10 +11,9 @@
 # ===========================================================================
 # OS: MacOS Ventura 13.1
 # ===========================================================================
+FZF="fzf --reverse --inline-info"
 
 SEARCHLIST="duckduckgo\ngoogle\nyoutube\nreddit\ngithub\ndevto\nfreecodecamp\nopen-url"
-
-FZF="fzf --reverse --inline-info"
 
 SELECT_SEARCH=$(
 	echo -e $SEARCHLIST |

@@ -17,7 +17,8 @@ SHAREDIR="$HOME/Public"
 
 FILE="$(
 	fd . -H -L -t f |
-		fzf --reverse --prompt="select file > " |
+		fzf --reverse --prompt="Select File > " \
+            --preview "$PREVBAT" |
 		awk '{print $1}'
 )"
 

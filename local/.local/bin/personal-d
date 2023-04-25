@@ -46,6 +46,7 @@ _EOF_
 }
 
 TMPFILE="$HOME/.cache/user/tmp.html"
+FZF="fzf --reverse --inline-info"
 
 [[ "$HOME/.cache/user" = "" ]] && mkdir "$HOME/.cache/user" || 2>/dev/null
 
@@ -63,7 +64,7 @@ __downloadly(){
     if [ "$LIST_ELEARNING" != "" ]; then
         SELECT_LIST_LEARNING=$(
             echo "$LIST_ELEARNING" |
-            fzf --prompt="Select Link Video > " \
+            $FZF --prompt="Select Link Video > " \
                 --header="CTRL-O: Open Link in Browser" \
                 --bind="ctrl-o:execute-silent(print {} | open {1})" |
                 awk '{print $1}'
@@ -78,7 +79,7 @@ __downloadly(){
                 )
             SELECT_LINK=$(
                 echo "$GET_LINK" |
-                fzf -m --prompt="Select Link Download > "
+                $FZF -m --prompt="Select Link Download > "
                 )
             if [ "$SELECT_LINK" != "" ]; then
                 clear

@@ -64,7 +64,7 @@ cmd bulk-rename ${{
 
 cmd moveto ${{
     set -f
-    dest="$(fd . $HOME | fzf)"
+    dest="$(fd . $HOME | fzf --reverse --prompt='Move To > ')"
     echo "are you sure want move file to $dest ? [Y/n] \c"; read ans
     if [ -z $ans ] || [ $ans = "y" ]; then
         for x in $fx; do
@@ -75,7 +75,7 @@ cmd moveto ${{
 
 cmd copyto ${{
     set -f
-    dest="$(fd . $HOME | fzf)"
+    dest="$(fd . $HOME | fzf --reverse --prompt='Copy To > ')"
     echo "are you sure want move file to $dest ? [Y/n] \c"; read ans
     if [ -z $ans ] || [ $ans = "y" ]; then
         for x in $fx; do
@@ -84,10 +84,12 @@ cmd copyto ${{
     fi
 }}
 
+
 cmd mkdir %set -f; printf " Directory Name: "; read -r ans; mkdir -p "$ans"
 cmd mkfile %set -f; printf " File Name: "; read -r ans; touch "$ans"
 cmd setwall %set -f; printf " are you sure want to change [Y/n] "; read -r ans; [ "$ans" = "y" ] || [ -z "$ans" ] && setwallpaper "$f"
 cmd trash ${{ mv $fx ~/.Trash && echo "deleted" $fx }}
+cmd rn_allfiles_without_space ${{ set $f; for f in *\ *; do mv "$f" "${f// /_}"; done }}
 
 # clear key for recieve multiple keymap
 map g
@@ -102,6 +104,7 @@ map rb bulk-rename
 map mf mkfile
 map md mkdir
 map mv moveto
+map mv rn_allfiles_without_space
 map C copyto
 
 # basic key

@@ -1,10 +1,11 @@
 #!/bin/bash
+FZF="fzf --reverse --inline-info"
 
 VOCSTORE="$HOME/Documents/pd/data/vocabulary.txt"
 
 MENU=$(
-	echo -e "Add-Vocabulary\nFind-Vocabulary" |
-		fzf --reverse --prompt="Select opts > "
+	echo -e "Add-Vocabulary\nFind-Vocabulary\nEdit-Vocabulary" |
+		$FZF --prompt="Select Options > "
 )
 
 case $MENU in
@@ -21,7 +22,12 @@ case $MENU in
 	Find-Vocabulary)
 		(
 			sed "" "$VOCSTORE" |
-				fzf --reverse --prompt="Find Vocabulary > "
+				$FZF --prompt="Find Vocabulary > "
+		)
+		;;
+	Edit-Vocabulary)
+		(
+            nvim "$VOCSTORE"
 		)
 		;;
 	*)
