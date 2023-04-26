@@ -10,6 +10,11 @@ window:
     opacity: 1
     decorations: none
 
+cursor:
+    style:
+      shape: block
+      blinking: never
+
 ipc_socket: true
 
 import:
