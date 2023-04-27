@@ -1,56 +1,118 @@
 schemes:
-    tokyo-night: &tokyo-night # Default colors
-        primary:
-            background: '#16161e'
-            foreground: '#a9b1d6'
+    tokyonight: &tokyonight
+      primary:
+        background: '0x1a1b26'
+        foreground: '0xc0caf5'
 
-        # Normal colors
-        normal:
-            black: '#32344a'
-            red: '#f7768e'
-            green: '#9ece6a'
-            yellow: '#e0af68'
-            blue: '#7aa2f7'
-            magenta: '#ad8ee6'
-            cyan: '#449dab'
-            white: '#787c99'
+      normal:
+        black:   '0x15161e'
+        red:     '0xf7768e'
+        green:   '0x9ece6a'
+        yellow:  '0xe0af68'
+        blue:    '0x7aa2f7'
+        magenta: '0xbb9af7'
+        cyan:    '0x7dcfff'
+        white:   '0xa9b1d6'
 
-        # Bright colors
-        bright:
-            black: '#444b6a'
-            red: '#ff7a93'
-            green: '#b9f27c'
-            yellow: '#ff9e64'
-            blue: '#7da6ff'
-            magenta: '#bb9af7'
-            cyan: '#0db9d7'
-            white: '#acb0d0'
+      bright:
+        black:   '0x414868'
+        red:     '0xf7768e'
+        green:   '0x9ece6a'
+        yellow:  '0xe0af68'
+        blue:    '0x7aa2f7'
+        magenta: '0xbb9af7'
+        cyan:    '0x7dcfff'
+        white:   '0xc0caf5'
 
-    tokyo-night-storm: &tokyo-night-storm # Default colors
-        primary:
-            background: '#24283b'
-            foreground: '#a9b1d6'
+      indexed_colors:
+        - { index: 16, color: '0xff9e64' }
+        - { index: 17, color: '0xdb4b4b' }
 
-        # Normal colors
-        normal:
-            black: '#32344a'
-            red: '#f7768e'
-            green: '#9ece6a'
-            yellow: '#e0af68'
-            blue: '#7aa2f7'
-            magenta: '#ad8ee6'
-            cyan: '#449dab'
-            white: '#9699a8'
+    tokyonight-day: &tokyonight-day
+      primary:
+        background: '0xe1e2e7'
+        foreground: '0x3760bf'
 
-        # Bright colors
-        bright:
-            black: '#444b6a'
-            red: '#ff7a93'
-            green: '#b9f27c'
-            yellow: '#ff9e64'
-            blue: '#7da6ff'
-            magenta: '#bb9af7'
-            cyan: '#0db9d7'
-            white: '#acb0d0'
+      normal:
+        black:   '0xe9e9ed'
+        red:     '0xf52a65'
+        green:   '0x587539'
+        yellow:  '0x8c6c3e'
+        blue:    '0x2e7de9'
+        magenta: '0x9854f1'
+        cyan:    '0x007197'
+        white:   '0x6172b0'
 
-colors: *tokyo-night
+      bright:
+        black:   '0xa1a6c5'
+        red:     '0xf52a65'
+        green:   '0x587539'
+        yellow:  '0x8c6c3e'
+        blue:    '0x2e7de9'
+        magenta: '0x9854f1'
+        cyan:    '0x007197'
+        white:   '0x3760bf'
+
+      indexed_colors:
+        - { index: 16, color: '0xb15c00' }
+        - { index: 17, color: '0xc64343' }
+
+    tokyonight-moon: &tokyonight-moon
+      primary:
+        background: '0x222436'
+        foreground: '0xc8d3f5'
+
+      normal:
+        black:   '0x1b1d2b'
+        red:     '0xff757f'
+        green:   '0xc3e88d'
+        yellow:  '0xffc777'
+        blue:    '0x82aaff'
+        magenta: '0xc099ff'
+        cyan:    '0x86e1fc'
+        white:   '0x828bb8'
+
+      bright:
+        black:   '0x444a73'
+        red:     '0xff757f'
+        green:   '0xc3e88d'
+        yellow:  '0xffc777'
+        blue:    '0x82aaff'
+        magenta: '0xc099ff'
+        cyan:    '0x86e1fc'
+        white:   '0xc8d3f5'
+
+      indexed_colors:
+        - { index: 16, color: '0xff966c' }
+        - { index: 17, color: '0xc53b53' }
+      #
+    tokyonight-storm: &tokyonight-storm
+      primary:
+        background: '0x24283b'
+        foreground: '0xc0caf5'
+
+      normal:
+        black:   '0x1d202f'
+        red:     '0xf7768e'
+        green:   '0x9ece6a'
+        yellow:  '0xe0af68'
+        blue:    '0x7aa2f7'
+        magenta: '0xbb9af7'
+        cyan:    '0x7dcfff'
+        white:   '0xa9b1d6'
+
+      bright:
+        black:   '0x414868'
+        red:     '0xf7768e'
+        green:   '0x9ece6a'
+        yellow:  '0xe0af68'
+        blue:    '0x7aa2f7'
+        magenta: '0xbb9af7'
+        cyan:    '0x7dcfff'
+        white:   '0xc0caf5'
+
+      indexed_colors:
+        - { index: 16, color: '0xff9e64' }
+        - { index: 17, color: '0xdb4b4b' }
+
+colors: *tokyonight-moon
