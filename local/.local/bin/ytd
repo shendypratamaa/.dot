@@ -1,0 +1,8 @@
+#!/bin/sh
+
+download() {
+    PM="$HOME/Music/pm/"
+	yt-dlp -x --audio-format mp3 "$@" -P "$PM"
+}
+
+download "$1"

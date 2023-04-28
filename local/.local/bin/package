@@ -2,6 +2,8 @@
 
 bundle() {
 	BREWFILE="$HOME/.config/brewfile/brewfile"
+	brew cleanup --prune=all &&
+	brew autoremove &&
 	brew bundle dump --force --file="$BREWFILE" && bat "$BREWFILE"
 }
 

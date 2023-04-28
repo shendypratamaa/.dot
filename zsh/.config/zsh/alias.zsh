@@ -67,10 +67,11 @@ alias cde="cd ~/.cache"
 alias cds="cd ~/.local/bin"
 alias cdl="cd ~/.local/share"
 alias cdb="cd ~/Documents/pd"
+alias cdm="cd ~/Music/pm"
 
 # PIPE-VIEWER
 alias msv="pipe-viewer --player=mpvv"
-alias msc="pipe-viewer -n --no-video-info --player=mpvm"
+alias msc="pipe-viewer -n --player=mpvm"
 
 # FZF ALIAS
 alias vd="

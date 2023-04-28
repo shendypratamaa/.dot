@@ -89,7 +89,7 @@ cmd mkdir %set -f; printf " Directory Name: "; read -r ans; mkdir -p "$ans"
 cmd mkfile %set -f; printf " File Name: "; read -r ans; touch "$ans"
 cmd setwall %set -f; printf " are you sure want to change [Y/n] "; read -r ans; [ "$ans" = "y" ] || [ -z "$ans" ] && setwallpaper "$f"
 cmd trash ${{ mv $fx ~/.Trash && echo "deleted" $fx }}
-cmd rn_allfiles_without_space ${{ set $f; for f in *\ *; do mv "$f" "${f// /_}"; done }}
+cmd rename_without_space ${{ set $f; for f in *\ *; do mv "$f" "${f// /_}"; done }}
 
 # clear key for recieve multiple keymap
 map g
@@ -101,10 +101,10 @@ map c
 # chain function into key
 map rs rename
 map rb bulk-rename
+map rn rename_without_space
 map mf mkfile
 map md mkdir
 map mv moveto
-map mv rn_allfiles_without_space
 map C copyto
 
 # basic key

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if ! command -v nativefier &> /dev/null; then
+    echo "Woops Command Not Found"
+    echo "Please Make sure your installed NATIVEFIER from NPM 🙆"
+else
+    nativefier -n "$1" --single-instance "$2" --user-agent firefox --background-color '#1a1b26'
+    cd "./$1-darwin-arm64" &&
+        mv -f "./$1.app" "/Applications/$1.app" &&
+        rm -rf "../$1-darwin-arm64" &&
+        echo "Successfully Create $1.app ✅"
+fi
