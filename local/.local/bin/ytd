@@ -1,8 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 
 download() {
     PM="$HOME/Music/pm/"
-	yt-dlp -x --audio-format mp3 "$@" -P "$PM"
+    echo -e "Youtube Music Link : \c"; read -r LINK
+	yt-dlp -x --audio-format mp3 "$LINK" -P "$PM"
 }
 
 download "$1"
