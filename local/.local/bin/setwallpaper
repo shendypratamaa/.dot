@@ -24,4 +24,4 @@ convert "$SETWALL" "$HOME/.cache/user/bg.jpg"
 wal --saturate 0.5 -i "$HOME/.cache/user/bg.jpg"
 zathura-pywal
 pywalfox update
-brew services restart yabai
+yabai --restart-service
