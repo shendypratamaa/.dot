@@ -17,5 +17,7 @@ git:
     showIcons: true
 
 os:
-    openCommand: 'open {{filename}}'
-    editCommand: 'nvim'
+  edit: 'myeditor {{filename}}'
+  editAtLine: 'myeditor --line={{line}} {{filename}}'
+  editAtLineAndWait: 'myeditor --block --line={{line}} {{filename}}'
+  editInTerminal: true
