@@ -10,7 +10,7 @@ cmd + shift - return : open -a firefox
 cmd - return : open -a alacritty
 
 # fzf-menu
-cmd + shift - f : /Applications/Alacritty.app/Contents/MacOS/alacritty --title="fzf-launcher" -e sh -c "$HOME/.local/share/fzf-launcher/fzf-launcher"
+cmd + shift - l : /Applications/Alacritty.app/Contents/MacOS/alacritty --title="fzf-launcher" -e sh -c "$HOME/.local/share/fzf-launcher/fzf-launcher"
 
 # NAVIGATION
 cmd - h : yabai -m window --focus west
