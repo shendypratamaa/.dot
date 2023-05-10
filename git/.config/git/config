@@ -19,6 +19,7 @@
 [core]
     pager = delta
     editor = nvim
+	excludesFile = /Users/shendypratama/.config/git/.gitignore
 
 [interactive]
     diffFilter = delta --color-only
@@ -40,3 +41,4 @@
 
 [format]
     pretty = dateline
+
