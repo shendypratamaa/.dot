@@ -3,3 +3,29 @@
 
 # CTAGS USED BY NEOVIM
 tags
+
+# ZSH
+.zcompcache
+.zcompdump
+.zsh_history
+
+# KARABINER
+karabiner
+cache.db
+cache.db.lock
+
+# LAZY-GIT
+state.yml
+
+# PIPE-VIEWER
+watched.txt
+playlists
+
+# VSCODE
+Code
+
+# PLUGINS [tmux | zsh]
+plugins
+
+# EXTRAS
+wallpaper
