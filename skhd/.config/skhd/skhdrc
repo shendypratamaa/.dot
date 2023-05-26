@@ -7,7 +7,7 @@ fn  - h:
 cmd + shift - return : open -a firefox
 
 # open terminal
-cmd - return : open -a alacritty
+# cmd - return : open -a alacritty
 
 # fzf-menu
 cmd + shift - l : /Applications/Alacritty.app/Contents/MacOS/alacritty --title="fzf-launcher" -e sh -c "$HOME/.local/share/fzf-launcher/fzf-launcher"

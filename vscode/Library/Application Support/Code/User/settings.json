@@ -1,9 +1,9 @@
 {
     "workbench.colorTheme": "Tokyo Night",
-    "workbench.editor.showTabs": false,
     "workbench.sideBar.location": "right",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.startupEditor": "none",
+    "workbench.editor.showTabs": false,
     "workbench.layoutControl.enabled": false,
 
     "files.eol": "\r\n",
@@ -23,7 +23,7 @@
     "editor.renderWhitespace": "none",
     "editor.lineNumbers": "relative",
     "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
-    "editor.fontSize": 16,
+    "editor.fontSize": 14,
     "editor.fontLigatures": true,
     "editor.rulers": [80],
     "editor.minimap.enabled": false,
@@ -54,7 +54,6 @@
     "[jsonc]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-
     "emmet.includeLanguages": {
         "javascript": "javascriptreact"
     },
@@ -110,6 +109,14 @@
         {
             "before": ["s", "v"],
             "commands": ["workbench.action.splitEditor"]
+        },
+        {
+            "before": ["s", "s"],
+            "commands": ["workbench.action.splitEditorDown"]
+        },
+        {
+            "before": ["]", "f"],
+            "commands": ["workbench.action.showCommands"]
         }
     ],
     "vim.visualModeKeyBindings": [
@@ -134,5 +141,6 @@
     "code-eol.color": "#524f67",
     "telemetry.telemetryLevel": "off",
     "importCost.bundleSizeColoring": "compressed",
-    "terminal.integrated.defaultProfile.osx": "zsh"
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "git.autofetch": true
 }

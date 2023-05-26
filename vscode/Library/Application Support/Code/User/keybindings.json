@@ -13,6 +13,11 @@
         "when": "explorerViewletVisible"
     },
     {
+        "key": "shift+k",
+        "command": "editor.action.showHover",
+        "when": "editorTextFocus"
+    },
+    {
         "key": "cmd+n",
         "command": "-workbench.action.toggleSidebarVisibility",
         "when": "explorerViewletVisible"
@@ -34,10 +39,6 @@
         "key": "ctrl+k",
         "command": "selectPrevSuggestion",
         "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
-    },
-    {
-        "key": "ctrl+m",
-        "command": "editor.action.showHover"
     },
     {
         "key": "ctrl+shift+j",
@@ -63,5 +64,21 @@
     {
         "key": "cmd+numpad0",
         "command": "-workbench.action.zoomReset"
-    }
+    },
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.navigateLeft"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.navigateRight"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.navigateUp"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.navigateDown"
+    },
 ]
