@@ -4,6 +4,7 @@ bundle() {
 	BREWFILE="$HOME/.config/brewfile/brewfile"
 	brew cleanup --prune=all &&
 	brew autoremove &&
+    code --list-extensions > ~/.config/vscode/vscode.txt
 	brew bundle dump --force --file="$BREWFILE" && bat "$BREWFILE"
 }
 
