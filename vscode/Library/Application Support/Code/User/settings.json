@@ -20,6 +20,7 @@
         "env-*": true
     },
 
+    "editor.stickyScroll.enabled": true,
     "editor.renderWhitespace": "none",
     "editor.lineNumbers": "relative",
     "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
@@ -72,8 +73,8 @@
     "vim.hlsearch": true,
     "vim.leader": "<space>",
     "vim.handleKeys": {
-        "<C-a>": false,
-        "<C-f>": false
+        "<C-d>": true,
+        "<C-u>": true
     },
     "vim.insertModeKeyBindings": [
         {
@@ -117,6 +118,14 @@
         {
             "before": ["]", "f"],
             "commands": ["workbench.action.showCommands"]
+        },
+        {
+            "before": ["<C-u>"],
+            "after": ["2", "0", "k", "z", "z"]
+        },
+        {
+            "before": ["<C-d>"],
+            "after": ["2", "0", "j", "z", "z"]
         }
     ],
     "vim.visualModeKeyBindings": [
@@ -127,6 +136,10 @@
         {
             "before": ["<"],
             "after": ["<", "g", "v"]
+        },
+        {
+            "before": [],
+            "after": []
         }
     ],
 
