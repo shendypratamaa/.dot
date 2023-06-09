@@ -81,4 +81,14 @@
         "key": "ctrl+j",
         "command": "workbench.action.navigateDown"
     },
+    {
+        "key": "shift+cmd+g",
+        "command": "workbench.view.scm",
+        "when": "workbench.scm.active"
+    },
+    {
+        "key": "ctrl+shift+g",
+        "command": "-workbench.view.scm",
+        "when": "workbench.scm.active"
+    }
 ]

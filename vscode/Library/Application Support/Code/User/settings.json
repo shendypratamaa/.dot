@@ -6,7 +6,6 @@
     "workbench.editor.showTabs": false,
     "workbench.layoutControl.enabled": false,
 
-    "files.eol": "\r\n",
     "files.autoSave": "onWindowChange",
     "files.insertFinalNewline": false,
     "files.trimFinalNewlines": false,
@@ -120,11 +119,11 @@
             "commands": ["workbench.action.showCommands"]
         },
         {
-            "before": ["<C-u>"],
+            "before": ["<c-u>"],
             "after": ["2", "0", "k", "z", "z"]
         },
         {
-            "before": ["<C-d>"],
+            "before": ["<c-d>"],
             "after": ["2", "0", "j", "z", "z"]
         }
     ],
@@ -143,6 +142,7 @@
         }
     ],
 
+    "search.quickOpen.includeHistory": false,
     "search.exclude": {
         "**/node_modules": true,
         "**/bower_components": true,
@@ -154,5 +154,9 @@
     "telemetry.telemetryLevel": "off",
     "importCost.bundleSizeColoring": "compressed",
     "terminal.integrated.defaultProfile.osx": "zsh",
-    "git.autofetch": true
+    "git.autofetch": true,
+    "vim.history": 1,
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }
