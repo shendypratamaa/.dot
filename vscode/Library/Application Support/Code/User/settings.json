@@ -3,7 +3,6 @@
     "workbench.sideBar.location": "right",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.startupEditor": "none",
-    "workbench.editor.showTabs": false,
     "workbench.layoutControl.enabled": false,
 
     "files.autoSave": "onWindowChange",
@@ -23,7 +22,7 @@
     "editor.renderWhitespace": "none",
     "editor.lineNumbers": "relative",
     "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
-    "editor.fontSize": 14,
+    "editor.fontSize": 12,
     "editor.fontLigatures": true,
     "editor.rulers": [80],
     "editor.minimap.enabled": false,
@@ -158,5 +157,7 @@
     "vim.history": 1,
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "diffEditor.renderSideBySide": false,
+    "workbench.editor.showTabs": false
 }

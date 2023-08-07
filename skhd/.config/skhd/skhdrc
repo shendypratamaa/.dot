@@ -68,5 +68,5 @@ cmd + ctrl - n : yabai -m space --create && \
                  yabai -m space --focus "${index}";
 
 # RELOAD YABAI + SKHD + STATUS BAR
-cmd + shift - r : yabai --restart-service \
+cmd + ctrl - r : yabai --restart-service \
                   skhd --restart-service
