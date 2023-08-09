@@ -1,163 +1,174 @@
 {
-    "workbench.colorTheme": "Tokyo Night",
-    "workbench.sideBar.location": "right",
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.startupEditor": "none",
-    "workbench.layoutControl.enabled": false,
+  "window.title": " ",
 
-    "files.autoSave": "onWindowChange",
-    "files.insertFinalNewline": false,
-    "files.trimFinalNewlines": false,
-    "files.trimTrailingWhitespace": true,
-    "files.watcherExclude": {
-        "**/.git/objects/**": true,
-        "**/.git/subtree-cache/**": true,
-        "**/node_modules/**": true,
-        "**/env/**": true,
-        "**/venv/**": true,
-        "env-*": true
-    },
+  "workbench.layoutControl.type": "menu",
+  "workbench.colorTheme": "Tokyo Night",
+  "workbench.sideBar.location": "right",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "none",
+  "workbench.layoutControl.enabled": false,
+  "workbench.editor.showTabs": false,
+  "workbench.tree.renderIndentGuides": "none",
 
-    "editor.stickyScroll.enabled": true,
-    "editor.renderWhitespace": "none",
-    "editor.lineNumbers": "relative",
-    "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
-    "editor.fontSize": 12,
-    "editor.fontLigatures": true,
-    "editor.rulers": [80],
-    "editor.minimap.enabled": false,
-    "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.tabSize": 4,
-        "editor.insertSpaces": true,
-        "editor.detectIndentation": false
-    },
-    "[javascriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.tabSize": 4,
-        "editor.insertSpaces": true,
-        "editor.detectIndentation": false
-    },
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.tabSize": 4,
-        "editor.insertSpaces": true,
-        "editor.detectIndentation": false
-    },
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[jsonc]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "emmet.includeLanguages": {
-        "javascript": "javascriptreact"
-    },
+  "files.autoSave": "onWindowChange",
+  "files.insertFinalNewline": false,
+  "files.trimFinalNewlines": false,
+  "files.trimTrailingWhitespace": true,
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/env/**": true,
+    "**/venv/**": true,
+    "env-*": true
+  },
 
-    "prettier.endOfLine": "lf",
-    "prettier.tabWidth": 4,
-    "prettier.singleQuote": true,
-    "prettier.semi": false,
-    "prettier.useTabs": false,
+  "editor.guides.indentation": false,
+  "editor.cursorBlinking": "phase",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.stickyScroll.enabled": true,
+  "editor.renderWhitespace": "none",
+  "editor.lineNumbers": "relative",
+  "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
+  "editor.fontSize": 12,
+  "editor.lineHeight": 22,
+  "editor.fontWeight": 500,
+  "editor.fontLigatures": true,
+  "editor.rulers": [80],
+  "editor.minimap.enabled": false,
+  "editor.matchBrackets": "never",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
 
-    "vim.easymotion": true,
-    "vim.changeWordIncludesWhitespace": false,
-    "vim.incsearch": true,
-    "vim.useSystemClipboard": true,
-    "vim.useCtrlKeys": true,
-    "vim.hlsearch": true,
-    "vim.leader": "<space>",
-    "vim.handleKeys": {
-        "<C-d>": true,
-        "<C-u>": true
-    },
-    "vim.insertModeKeyBindings": [
-        {
-            "before": ["j", "k"],
-            "after": ["<Esc>"]
-        }
-    ],
-    "vim.normalModeKeyBindings": [
-        {
-            "before": ["<S-h>"],
-            "commands": [":tabp"]
-        },
-        {
-            "before": ["<S-l>"],
-            "commands": [":tabn"]
-        },
-        {
-            "before": ["<C-r>"],
-            "commands": [":nohl"]
-        },
-        {
-            "before": ["u"],
-            "commands": [":undo"]
-        },
-        {
-            "before": ["]", "q"],
-            "commands": [":wq"]
-        },
-        {
-            "before": [":", "w", "<CR>"],
-            "commands": ["workbench.action.files.save"]
-        },
-        {
-            "before": ["s", "v"],
-            "commands": ["workbench.action.splitEditor"]
-        },
-        {
-            "before": ["s", "s"],
-            "commands": ["workbench.action.splitEditorDown"]
-        },
-        {
-            "before": ["]", "f"],
-            "commands": ["workbench.action.showCommands"]
-        },
-        {
-            "before": ["<c-u>"],
-            "after": ["2", "0", "k", "z", "z"]
-        },
-        {
-            "before": ["<c-d>"],
-            "after": ["2", "0", "j", "z", "z"]
-        }
-    ],
-    "vim.visualModeKeyBindings": [
-        {
-            "before": [">"],
-            "after": [">", "g", "v"]
-        },
-        {
-            "before": ["<"],
-            "after": ["<", "g", "v"]
-        },
-        {
-            "before": [],
-            "after": []
-        }
-    ],
+  "prettier.endOfLine": "lf",
+  "prettier.tabWidth": 2,
+  "prettier.singleQuote": true,
+  "prettier.semi": false,
+  "prettier.useTabs": false,
 
-    "search.quickOpen.includeHistory": false,
-    "search.exclude": {
-        "**/node_modules": true,
-        "**/bower_components": true,
-        "**/env": true,
-        "**/venv": true
+  "vim.easymotion": true,
+  "vim.changeWordIncludesWhitespace": false,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-d>": true,
+    "<C-u>": true
+  },
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<S-h>"],
+      "commands": [":tabp"]
     },
+    {
+      "before": ["<S-l>"],
+      "commands": [":tabn"]
+    },
+    {
+      "before": ["<C-r>"],
+      "commands": [":nohl"]
+    },
+    {
+      "before": ["u"],
+      "commands": [":undo"]
+    },
+    {
+      "before": ["]", "q"],
+      "commands": [":wq"]
+    },
+    {
+      "before": [":", "w", "<CR>"],
+      "commands": ["workbench.action.files.save"]
+    },
+    {
+      "before": ["s", "v"],
+      "commands": ["workbench.action.splitEditor"]
+    },
+    {
+      "before": ["s", "s"],
+      "commands": ["workbench.action.splitEditorDown"]
+    },
+    {
+      "before": ["]", "f"],
+      "commands": ["workbench.action.showCommands"]
+    },
+    {
+      "before": ["<c-u>"],
+      "after": ["2", "0", "k", "z", "z"]
+    },
+    {
+      "before": ["<c-d>"],
+      "after": ["2", "0", "j", "z", "z"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": [">"],
+      "after": [">", "g", "v"]
+    },
+    {
+      "before": ["<"],
+      "after": ["<", "g", "v"]
+    },
+    {
+      "before": [],
+      "after": []
+    }
+  ],
 
-    "code-eol.color": "#524f67",
-    "telemetry.telemetryLevel": "off",
-    "importCost.bundleSizeColoring": "compressed",
-    "terminal.integrated.defaultProfile.osx": "zsh",
-    "git.autofetch": true,
-    "vim.history": 1,
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "diffEditor.renderSideBySide": false,
-    "workbench.editor.showTabs": false
+  "search.quickOpen.includeHistory": false,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/env": true,
+    "**/venv": true
+  },
+
+  "code-eol.color": "#524f67",
+  "telemetry.telemetryLevel": "off",
+  "importCost.bundleSizeColoring": "compressed",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "git.autofetch": true,
+  "vim.history": 1,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "diffEditor.renderSideBySide": false,
+  "chatgpt.lang": "en"
 }
