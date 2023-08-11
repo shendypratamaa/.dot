@@ -2,7 +2,7 @@
   "window.title": " ",
 
   "workbench.layoutControl.type": "menu",
-  "workbench.colorTheme": "Tokyo Night",
+  "workbench.colorTheme": "Catppuccin Mocha",
   "workbench.sideBar.location": "right",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "none",

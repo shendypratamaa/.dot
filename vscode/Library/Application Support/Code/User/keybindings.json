@@ -69,18 +69,9 @@
     "when": "workbench.scm.active"
   },
   {
-    "key": "ctrl+shift+g",
+    "key": "shift+cmd+g",
     "command": "-workbench.view.scm",
     "when": "workbench.scm.active"
-  },
-  {
-    "key": "shift+cmd+n",
-    "command": "-workbench.action.newWindow"
-  },
-  {
-    "key": "shift+cmd+c",
-    "command": "-workbench.action.terminal.openNativeConsole",
-    "when": "!terminalFocus"
   },
   {
     "key": "shift+cmd+/",
