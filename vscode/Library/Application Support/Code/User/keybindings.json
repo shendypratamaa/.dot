@@ -1,7 +1,53 @@
 [
   {
-    "key": "cmd+n",
+    "key": "cmd+f",
     "command": ""
+  },
+  {
+    "key": "cmd+n",
+    "command": "extension.advancedNewFile"
+  },
+  {
+    "key": "cmd+o",
+    "command": "projectManager.listGitProjects#sideBarGit"
+  },
+  {
+    "key": "cmd+r",
+    "command": "projectManager.refreshGitProjects"
+  },
+  {
+    "key": "cmd+e",
+    "command": "workbench.view.explorer"
+  },
+  {
+    "key": "cmd+e",
+    "command": "-workbench.view.explorer"
+  },
+  {
+    "key": "cmd+e",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "explorerViewletVisible"
+  },
+  {
+    "key": "cmd+e",
+    "command": "-workbench.action.toggleSidebarVisibility",
+    "when": "explorerViewletVisible"
+  },
+  {
+    "key": "cmd+g",
+    "command": "workbench.view.scm"
+  },
+  {
+    "key": "shift+cmd+'",
+    "command": "chatgpt.sidebar.focus"
+  },
+  {
+    "key": "cmd+'",
+    "command": "figma.views.files.focus"
+  },
+  {
+    "key": "cmd+\\",
+    "command": "projectsExplorerGit.focus"
   },
   {
     "key": "ctrl+f",
@@ -39,10 +85,6 @@
     "command": "workbench.action.zoomReset"
   },
   {
-    "key": "cmd+numpad0",
-    "command": "-workbench.action.zoomReset"
-  },
-  {
     "key": "ctrl+h",
     "command": "workbench.action.navigateLeft"
   },
@@ -57,24 +99,6 @@
   {
     "key": "ctrl+j",
     "command": "workbench.action.navigateDown"
-  },
-  {
-    "key": "shift+cmd+g",
-    "command": "workbench.view.scm",
-    "when": "workbench.scm.active"
-  },
-  {
-    "key": "shift+cmd+g",
-    "command": "-workbench.view.scm",
-    "when": "workbench.scm.active"
-  },
-  {
-    "key": "shift+cmd+/",
-    "command": "chatgpt.sidebar.focus"
-  },
-  {
-    "key": "shift+cmd+'",
-    "command": "figma.views.files.focus"
   },
   {
     "key": "ctrl+=",

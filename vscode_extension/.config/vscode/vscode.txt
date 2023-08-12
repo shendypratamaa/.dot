@@ -1,3 +1,6 @@
+aaron-bond.better-comments
+alefragnani.project-manager
+arcticicestudio.nord-visual-studio-code
 be5invis.vscode-custom-css
 bradlc.vscode-tailwindcss
 Catppuccin.catppuccin-vsc
@@ -7,6 +10,7 @@ christian-kohler.path-intellisense
 crystal-spider.jsdoc-generator
 dbaeumer.vscode-eslint
 dsznajder.es7-react-js-snippets
+eamodio.gitlens
 ecmel.vscode-html-css
 EditorConfig.EditorConfig
 enkia.tokyo-night
@@ -24,8 +28,8 @@ PKief.material-icon-theme
 sohamkamani.code-eol
 usernamehw.errorlens
 vscodevim.vim
-waderyan.gitblame
 wix.vscode-import-cost
 xabikos.JavaScriptSnippets
+yzhang.markdown-all-in-one
 zhang-renyang.chat-gpt
 Zignd.html-css-class-completion

@@ -1,13 +1,12 @@
 {
-  "window.zoomLevel": 1,
   "window.title": " ",
 
   "zenMode.hideLineNumbers": false,
   "zenMode.fullScreen": false,
   "zenMode.hideStatusBar": false,
 
+  "workbench.activityBar.visible": false,
   "workbench.layoutControl.type": "menu",
-  "workbench.colorTheme": "Catppuccin Mocha",
   "workbench.sideBar.location": "right",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "none",
@@ -28,15 +27,15 @@
     "env-*": true
   },
 
-  "vscode_custom_css.imports": [
-    "file:///Users/shendypratama/.config/vscode-font-style/.vscode-style.css"
-  ],
-
   "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
-  "editor.fontSize": 12,
-  "editor.lineHeight": 24,
-  "editor.fontWeight": 500,
+  "editor.fontSize": 14,
+  "editor.lineHeight": 22,
+  "editor.fontWeight": 400,
   "editor.fontLigatures": true,
+  "editor.codeActionsOnSave": {
+    "source.addMissingImports": true,
+    "source.organizeImports": true
+  },
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
@@ -67,9 +66,11 @@
       }
     ]
   },
+  "editor.scrollbar.horizontal": "hidden",
   "editor.occurrencesHighlight": false,
   "editor.suggest.insertMode": "replace",
   "editor.guides.indentation": false,
+  "editor.cursorStyle": "block",
   "editor.cursorBlinking": "phase",
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.stickyScroll.enabled": true,
@@ -118,6 +119,27 @@
   "prettier.semi": false,
   "prettier.useTabs": false,
 
+  "vscode_custom_css.imports": ["file:///Users/shendypratama/.config/vscode-font-style/.vscode-style.css"],
+
+  "projectManager.git.baseFolders": ["$home/Public/project/typescript"],
+  "projectManager.sortList": "Recent",
+
+  "advancedNewFile.exclude": {
+    "node_modules": true,
+    "node_modules_electron": true,
+    "dev": true,
+    "dist": true
+  },
+  "advancedNewFile.showInformationMessages": true,
+  "advancedNewFile.convenienceOptions": ["last", "current", "root"],
+
+  "code-eol.color": "#D0D3D9",
+  "importCost.bundleSizeColoring": "compressed",
+  "chatgpt.lang": "en",
+
+  "jsdoc-generator.includeTime": false,
+  "jsdoc-generator.includeDate": false,
+
   "vim.statusBarColorControl": false,
   "vim.statusBarColors.normal": ["#8FBCBB", "#000"],
   "vim.statusBarColors.insert": ["#BF616A", "#000"],
@@ -143,6 +165,8 @@
   "vim.hlsearch": false,
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.duration": 50,
+  "vim.history": 1,
+  "vim.surround": true,
   "vim.highlightedyank.color": "pink",
   "vim.highlightedyank.textColor": "white",
   "vim.leader": "<space>",
@@ -168,10 +192,6 @@
       "commands": [":tabp"]
     },
     {
-      "before": ["<S-k>"],
-      "commands": ["editor.action.showHover"]
-    },
-    {
       "before": ["<S-l>"],
       "commands": [":tabn"]
     },
@@ -186,6 +206,14 @@
     {
       "before": ["]", "q"],
       "commands": [":wq"]
+    },
+    {
+      "before": ["]", "g", "n"],
+      "commands": ["jsdoc-generator.generateJsdoc"]
+    },
+    {
+      "before": ["<S-k>"],
+      "commands": ["editor.action.showHover"]
     },
     {
       "before": ["]", "d"],
@@ -208,15 +236,15 @@
       "commands": ["workbench.action.files.save"]
     },
     {
-      "before": ["]", "r", "m"],
+      "before": ["]", "r", "n"],
       "commands": ["workbench.action.removeRootFolder"]
     },
     {
-      "before": ["s", "v"],
+      "before": ["s", "p"],
       "commands": ["workbench.action.splitEditor"]
     },
     {
-      "before": ["s", "s"],
+      "before": ["v", "s", "p"],
       "commands": ["workbench.action.splitEditorDown"]
     },
     {
@@ -259,12 +287,15 @@
     "**/venv": true
   },
 
-  "code-eol.color": "#524f67",
   "telemetry.telemetryLevel": "off",
-  "importCost.bundleSizeColoring": "compressed",
-  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.defaultProfile.osx": "tmux-shell",
+  "terminal.integrated.profiles.osx": {
+    "tmux-shell": {
+      "path": "tmux",
+      "args": ["new-session", "-A"]
+    }
+  },
   "git.autofetch": true,
-  "vim.history": 1,
   "diffEditor.renderSideBySide": false,
-  "chatgpt.lang": "en",
+  "workbench.colorTheme": "Catppuccin Macchiato"
 }
