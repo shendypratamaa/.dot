@@ -114,5 +114,5 @@
     "key": "c",
     "command": "filesExplorer.copy",
     "when": "filesExplorerFocus && !inputFocus"
-  }
+  },
 ]

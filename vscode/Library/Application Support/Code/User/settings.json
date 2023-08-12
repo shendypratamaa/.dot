@@ -1,4 +1,5 @@
 {
+  "window.zoomLevel": 1,
   "window.title": " ",
 
   "zenMode.hideLineNumbers": false,
@@ -30,9 +31,10 @@
   "vscode_custom_css.imports": [
     "file:///Users/shendypratama/.config/vscode-font-style/.vscode-style.css"
   ],
+
   "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
   "editor.fontSize": 12,
-  "editor.lineHeight": 22,
+  "editor.lineHeight": 24,
   "editor.fontWeight": 500,
   "editor.fontLigatures": true,
   "editor.tokenColorCustomizations": {
@@ -116,7 +118,7 @@
   "prettier.semi": false,
   "prettier.useTabs": false,
 
-  "vim.statusBarColorControl": true,
+  "vim.statusBarColorControl": false,
   "vim.statusBarColors.normal": ["#8FBCBB", "#000"],
   "vim.statusBarColors.insert": ["#BF616A", "#000"],
   "vim.statusBarColors.visual": ["#B48EAD", "#000"],
@@ -206,6 +208,10 @@
       "commands": ["workbench.action.files.save"]
     },
     {
+      "before": ["]", "r", "m"],
+      "commands": ["workbench.action.removeRootFolder"]
+    },
+    {
       "before": ["s", "v"],
       "commands": ["workbench.action.splitEditor"]
     },
@@ -261,11 +267,4 @@
   "vim.history": 1,
   "diffEditor.renderSideBySide": false,
   "chatgpt.lang": "en",
-  "workbench.colorCustomizations": {
-    "statusBar.background": "#8FBCBB",
-    "statusBar.noFolderBackground": "#8FBCBB",
-    "statusBar.debuggingBackground": "#8FBCBB",
-    "statusBar.foreground": "#000",
-    "statusBar.debuggingForeground": "#000"
-  }
 }
