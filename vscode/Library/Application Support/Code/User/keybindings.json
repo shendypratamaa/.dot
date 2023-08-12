@@ -4,11 +4,6 @@
     "command": ""
   },
   {
-    "key": "shift+k",
-    "command": "editor.action.showHover",
-    "when": "editorTextFocus"
-  },
-  {
     "key": "ctrl+f",
     "command": "editor.action.formatDocument"
   },
@@ -80,5 +75,44 @@
   {
     "key": "shift+cmd+'",
     "command": "figma.views.files.focus"
+  },
+  {
+    "key": "ctrl+=",
+    "command": "expand_region",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+-",
+    "command": "undo_expand_region",
+    "when": "editorTextFocus && editorHasSelection"
+  },
+  {
+    "key": "shift+cmd+c",
+    "command": "turboConsoleLog.displayLogMessage"
+  },
+  {
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "p",
+    "command": "filesExplorer.paste",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "d",
+    "command": "deleteFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "c",
+    "command": "filesExplorer.copy",
+    "when": "filesExplorerFocus && !inputFocus"
   }
 ]
