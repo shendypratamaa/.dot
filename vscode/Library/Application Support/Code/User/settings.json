@@ -27,6 +27,44 @@
     "env-*": true
   },
 
+  "vscode_custom_css.imports": [
+    "file:///Users/shendypratama/.config/vscode-font-style/.vscode-style.css"
+  ],
+  "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
+  "editor.fontSize": 12,
+  "editor.lineHeight": 22,
+  "editor.fontWeight": 500,
+  "editor.fontLigatures": true,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          "comment",
+          "entity.name.type.class", //class namefs
+          "constant", //String, Number, Boolean…, this, super
+          "storage.modifier", //static keyword
+          "storage.type.class.js", //class keyword
+          "keyword" //import, export, return…
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": [
+          "invalid",
+          "keyword.operator",
+          "constant.numeric.css",
+          "keyword.other.unit.px.css",
+          "constant.numeric.decimal.js",
+          "constant.numeric.json"
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      }
+    ]
+  },
   "editor.occurrencesHighlight": false,
   "editor.suggest.insertMode": "replace",
   "editor.guides.indentation": false,
@@ -35,11 +73,6 @@
   "editor.stickyScroll.enabled": true,
   "editor.renderWhitespace": "none",
   "editor.lineNumbers": "relative",
-  "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
-  "editor.fontSize": 12,
-  "editor.lineHeight": 22,
-  "editor.fontWeight": 500,
-  "editor.fontLigatures": true,
   "editor.rulers": [80],
   "editor.minimap.enabled": false,
   "editor.matchBrackets": "never",
@@ -95,20 +128,12 @@
   "vim.statusBarColors.easymotionmode": "#007ACC",
   "vim.statusBarColors.easymotioninputmode": "#007ACC",
   "vim.statusBarColors.surroundinputmode": "#007ACC",
-
   "vim.easymotion": true,
   "vim.easymotionMarkerBackgroundColor": "#424874",
   "vim.easymotionMarkerForegroundColorOneChar": "#F4EEFF",
   "vim.easymotionMarkerForegroundColorTwoCharFirst": "#F4EEFF",
   "vim.easymotionMarkerForegroundColorTwoCharSecond": "#F4EEFF",
   "vim.easymotionMarkerFontWeight": "bold",
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": [" "],
-      "after": ["leader", "leader", "leader", "b", "d", "w"]
-    }
-  ],
-
   "vim.changeWordIncludesWhitespace": false,
   "vim.incsearch": true,
   "vim.useSystemClipboard": true,
@@ -119,6 +144,12 @@
   "vim.highlightedyank.color": "pink",
   "vim.highlightedyank.textColor": "white",
   "vim.leader": "<space>",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [" "],
+      "after": ["leader", "leader", "leader", "b", "d", "w"]
+    }
+  ],
   "vim.handleKeys": {
     "<C-d>": true,
     "<C-u>": true
@@ -126,7 +157,7 @@
   "vim.insertModeKeyBindings": [
     {
       "before": ["j", "k"],
-      "after": ["<Esc>"],
+      "after": ["<Esc>"]
     }
   ],
   "vim.normalModeKeyBindings": [
@@ -159,6 +190,10 @@
       "commands": ["editor.action.marker.next"]
     },
     {
+      "before": ["]", "c", "s"],
+      "commands": ["workbench.action.clearEditorHistory"]
+    },
+    {
       "before": ["[", "d"],
       "commands": ["editor.action.marker.prev"]
     },
@@ -167,7 +202,7 @@
       "commands": ["editor.action.quickFix"]
     },
     {
-      "before": [":", "w", "<CR>"],
+      "before": ["]", "w"],
       "commands": ["workbench.action.files.save"]
     },
     {

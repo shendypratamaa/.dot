@@ -66,7 +66,7 @@ alias cdz="cd ~/.config/zsh"
 alias cde="cd ~/.cache"
 alias cds="cd ~/.local/bin"
 alias cdl="cd ~/.local/share"
-alias cdb="cd ~/Documents/pd"
+alias cdp="cd ~/Documents/pd"
 alias cdm="cd ~/Music/pm"
 
 # PIPE-VIEWER
@@ -114,4 +114,8 @@ alias idv=" \
     tmux split-window -v -p 35 && \
     tmux split-window -h -p 50 && \
     tmux select-pane -t 0
+"
+
+alias idvs=" \
+    tmux split-window -h -p 50
 "

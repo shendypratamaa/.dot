@@ -1,0 +1,22 @@
+.type.storage,.type.storage.declaration, .storage.class.modifier, .mtki {
+  font-family: 'Operator Mono';
+  font-size: 1.1em;
+}
+
+.type.storage.arrow.function {
+  font-family: 'JetBrainsMono Nerd Font Mono'
+}
+
+.decorator.name, .decorator.punctuation:not(.block), .import.keyword {
+    font-family: 'Operator Mono';
+    font-size: 1.1em
+}
+.attribute-name {
+    font-family: 'Operator Mono';
+    font-size: 1.1em
+}
+
+.comment:not(.punctuation) {
+    font-family: 'Operator Mono';
+    font-size: 1.1em
+}
