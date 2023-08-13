@@ -15,6 +15,7 @@
   "workbench.tree.renderIndentGuides": "none",
 
   "files.autoSave": "onWindowChange",
+  "files.eol": "\r\n",
   "files.insertFinalNewline": false,
   "files.trimFinalNewlines": false,
   "files.trimTrailingWhitespace": true,
@@ -74,9 +75,8 @@
   "editor.cursorBlinking": "phase",
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.stickyScroll.enabled": true,
-  "editor.renderWhitespace": "none",
+  "editor.renderWhitespace": "all",
   "editor.lineNumbers": "relative",
-  "editor.rulers": [80],
   "editor.minimap.enabled": false,
   "editor.matchBrackets": "never",
   "[html]": {
@@ -119,7 +119,11 @@
   "prettier.semi": false,
   "prettier.useTabs": false,
 
-  "vscode_custom_css.imports": ["file:///Users/shendypratama/.config/vscode-font-style/.vscode-style.css"],
+  "typescript.preferences.importModuleSpecifier": "relative",
+
+  "vscode_custom_css.imports": [
+    "file:///Users/shendypratama/.config/vscode-font-style/.vscode-style.css"
+  ],
 
   "projectManager.git.baseFolders": ["$home/Public/project/typescript"],
   "projectManager.sortList": "Recent",
@@ -133,25 +137,13 @@
   "advancedNewFile.showInformationMessages": true,
   "advancedNewFile.convenienceOptions": ["last", "current", "root"],
 
-  "code-eol.color": "#D0D3D9",
+  "code-eol.color": "#514E4E",
   "importCost.bundleSizeColoring": "compressed",
   "chatgpt.lang": "en",
 
   "jsdoc-generator.includeTime": false,
   "jsdoc-generator.includeDate": false,
 
-  "vim.statusBarColorControl": false,
-  "vim.statusBarColors.normal": ["#8FBCBB", "#000"],
-  "vim.statusBarColors.insert": ["#BF616A", "#000"],
-  "vim.statusBarColors.visual": ["#B48EAD", "#000"],
-  "vim.statusBarColors.visualline": ["#B48EAD", "#000"],
-  "vim.statusBarColors.visualblock": ["#A3BE8C", "#000"],
-  "vim.statusBarColors.replace": "#D08770",
-  "vim.statusBarColors.commandlineinprogress": "#007ACC",
-  "vim.statusBarColors.searchinprogressmode": "#007ACC",
-  "vim.statusBarColors.easymotionmode": "#007ACC",
-  "vim.statusBarColors.easymotioninputmode": "#007ACC",
-  "vim.statusBarColors.surroundinputmode": "#007ACC",
   "vim.easymotion": true,
   "vim.easymotionMarkerBackgroundColor": "#424874",
   "vim.easymotionMarkerForegroundColorOneChar": "#F4EEFF",
@@ -297,5 +289,7 @@
   },
   "git.autofetch": true,
   "diffEditor.renderSideBySide": false,
-  "workbench.colorTheme": "Catppuccin Macchiato"
+  "workbench.colorTheme": "Catppuccin Macchiato",
+  "totalTypeScript.hideAllTips": false,
+  "totalTypeScript.hideBasicTips": false
 }

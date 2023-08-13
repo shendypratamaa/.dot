@@ -139,4 +139,9 @@
     "command": "filesExplorer.copy",
     "when": "filesExplorerFocus && !inputFocus"
   },
+  {
+    "key": "f",
+    "command": "workbench.files.action.collapseExplorerFolders",
+    "when": "filesExplorerFocus && !inputFocus"
+  }
 ]
