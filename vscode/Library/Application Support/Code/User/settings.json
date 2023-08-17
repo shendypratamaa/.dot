@@ -1,4 +1,5 @@
 {
+  "breadcrumbs.enabled": false,
   "window.title": " ",
 
   "zenMode.hideLineNumbers": false,
@@ -6,10 +7,10 @@
   "zenMode.hideStatusBar": false,
 
   "workbench.activityBar.visible": false,
-  "workbench.layoutControl.type": "menu",
   "workbench.sideBar.location": "right",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "none",
+  "workbench.layoutControl.type": "menu",
   "workbench.layoutControl.enabled": false,
   "workbench.editor.showTabs": false,
   "workbench.tree.renderIndentGuides": "none",
@@ -29,8 +30,8 @@
   },
 
   "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
-  "editor.fontSize": 14,
-  "editor.lineHeight": 22,
+  "editor.fontSize": 12,
+  "editor.lineHeight": 20,
   "editor.fontWeight": 400,
   "editor.fontLigatures": true,
   "editor.codeActionsOnSave": {
@@ -67,18 +68,19 @@
       }
     ]
   },
-  "editor.scrollbar.horizontal": "hidden",
+  "editor.bracketPairColorization.enabled": true,
   "editor.occurrencesHighlight": false,
-  "editor.suggest.insertMode": "replace",
   "editor.guides.indentation": false,
+  "editor.stickyScroll.enabled": true,
+  "editor.minimap.enabled": false,
+  "editor.matchBrackets": "never",
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.suggest.insertMode": "replace",
   "editor.cursorStyle": "block",
   "editor.cursorBlinking": "phase",
   "editor.cursorSmoothCaretAnimation": "on",
-  "editor.stickyScroll.enabled": true,
   "editor.renderWhitespace": "all",
   "editor.lineNumbers": "relative",
-  "editor.minimap.enabled": false,
-  "editor.matchBrackets": "never",
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -232,11 +234,11 @@
       "commands": ["workbench.action.removeRootFolder"]
     },
     {
-      "before": ["s", "p"],
+      "before": ["v", "s", "p"],
       "commands": ["workbench.action.splitEditor"]
     },
     {
-      "before": ["v", "s", "p"],
+      "before": ["s", "p"],
       "commands": ["workbench.action.splitEditorDown"]
     },
     {
@@ -291,5 +293,10 @@
   "diffEditor.renderSideBySide": false,
   "workbench.colorTheme": "Catppuccin Macchiato",
   "totalTypeScript.hideAllTips": false,
-  "totalTypeScript.hideBasicTips": false
+  "totalTypeScript.hideBasicTips": false,
+  "totalTypeScript.hiddenTips": [
+    "typing-function-parameters",
+    "basic-types"
+  ],
+  "gitlens.outputLevel": "debug"
 }

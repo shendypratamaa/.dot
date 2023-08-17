@@ -1,6 +1,5 @@
 aaron-bond.better-comments
 alefragnani.project-manager
-arcticicestudio.nord-visual-studio-code
 be5invis.vscode-custom-css
 bradlc.vscode-tailwindcss
 Catppuccin.catppuccin-vsc
@@ -8,6 +7,7 @@ ChakrounAnas.turbo-console-log
 christian-kohler.npm-intellisense
 christian-kohler.path-intellisense
 crystal-spider.jsdoc-generator
+dae.vscode-mac-color-picker
 dbaeumer.vscode-eslint
 dsznajder.es7-react-js-snippets
 eamodio.gitlens
@@ -18,9 +18,11 @@ esbenp.prettier-vscode
 figma.figma-vscode-extension
 firefox-devtools.vscode-firefox-debug
 formulahendry.auto-rename-tag
+frenco.vscode-notion
 kamikillerto.vscode-colorize
 lehni.vscode-fix-checksums
 letrieu.expand-region
+mattpocock.ts-error-translator
 meganrogge.template-string-converter
 ms-vscode.vscode-typescript-next
 patbenatar.advanced-new-file
