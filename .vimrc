@@ -13,17 +13,7 @@ set termguicolors
 set noswapfile
 set incsearch
 
-call plug#begin()
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'junegunn/fzf.vim'
-    Plug 'junegunn/seoul256.vim'
-    Plug 'junegunn/vim-easy-align' 
-
-    Plug 'tpope/vim-surround'
-    Plug 'tpope/vim-repeat'
-call plug#end()
-
-colorscheme seoul256
+colorscheme peachpuff
 
 let mapleader = " "
 nnoremap <leader><CR> :so ~/.vimrc<CR>
@@ -47,9 +37,5 @@ nnoremap [q :cprev<CR>
 
 " buffers
 nnoremap ]qq :bw<CR>
-nnoremap <S-q> <C-^><CR>
 nnoremap <S-l> :bn<CR>
 nnoremap <S-h> :bp<CR>
-
-" fzf
-nnoremap ]f :Files<CR>
