@@ -1,118 +1,78 @@
-schemes:
-    tokyonight: &tokyonight
-      primary:
-        background: '0x1a1b26'
-        foreground: '0xc0caf5'
+colors:
+    primary:
+        background: "#1E1E2E" # base
+        foreground: "#CDD6F4" # text
+        # Bright and dim foreground colors
+        dim_foreground: "#CDD6F4" # text
+        bright_foreground: "#CDD6F4" # text
 
-      normal:
-        black:   '0x15161e'
-        red:     '0xf7768e'
-        green:   '0x9ece6a'
-        yellow:  '0xe0af68'
-        blue:    '0x7aa2f7'
-        magenta: '0xbb9af7'
-        cyan:    '0x7dcfff'
-        white:   '0xa9b1d6'
+    # Cursor colors
+    cursor:
+        text: "#1E1E2E" # base
+        cursor: "#F5E0DC" # rosewater
+    vi_mode_cursor:
+        text: "#1E1E2E" # base
+        cursor: "#B4BEFE" # lavender
 
-      bright:
-        black:   '0x414868'
-        red:     '0xf7768e'
-        green:   '0x9ece6a'
-        yellow:  '0xe0af68'
-        blue:    '0x7aa2f7'
-        magenta: '0xbb9af7'
-        cyan:    '0x7dcfff'
-        white:   '0xc0caf5'
+    # Search colors
+    search:
+        matches:
+            foreground: "#1E1E2E" # base
+            background: "#A6ADC8" # subtext0
+        focused_match:
+            foreground: "#1E1E2E" # base
+            background: "#A6E3A1" # green
+        footer_bar:
+            foreground: "#1E1E2E" # base
+            background: "#A6ADC8" # subtext0
 
-      indexed_colors:
-        - { index: 16, color: '0xff9e64' }
-        - { index: 17, color: '0xdb4b4b' }
+    # Keyboard regex hints
+    hints:
+        start:
+            foreground: "#1E1E2E" # base
+            background: "#F9E2AF" # yellow
+        end:
+            foreground: "#1E1E2E" # base
+            background: "#A6ADC8" # subtext0
 
-    tokyonight-day: &tokyonight-day
-      primary:
-        background: '0xe1e2e7'
-        foreground: '0x3760bf'
+    # Selection colors
+    selection:
+        text: "#1E1E2E" # base
+        background: "#F5E0DC" # rosewater
 
-      normal:
-        black:   '0xe9e9ed'
-        red:     '0xf52a65'
-        green:   '0x587539'
-        yellow:  '0x8c6c3e'
-        blue:    '0x2e7de9'
-        magenta: '0x9854f1'
-        cyan:    '0x007197'
-        white:   '0x6172b0'
+    # Normal colors
+    normal:
+        black: "#45475A" # surface1
+        red: "#F38BA8" # red
+        green: "#A6E3A1" # green
+        yellow: "#F9E2AF" # yellow
+        blue: "#89B4FA" # blue
+        magenta: "#F5C2E7" # pink
+        cyan: "#94E2D5" # teal
+        white: "#BAC2DE" # subtext1
 
-      bright:
-        black:   '0xa1a6c5'
-        red:     '0xf52a65'
-        green:   '0x587539'
-        yellow:  '0x8c6c3e'
-        blue:    '0x2e7de9'
-        magenta: '0x9854f1'
-        cyan:    '0x007197'
-        white:   '0x3760bf'
+    # Bright colors
+    bright:
+        black: "#585B70" # surface2
+        red: "#F38BA8" # red
+        green: "#A6E3A1" # green
+        yellow: "#F9E2AF" # yellow
+        blue: "#89B4FA" # blue
+        magenta: "#F5C2E7" # pink
+        cyan: "#94E2D5" # teal
+        white: "#A6ADC8" # subtext0
 
-      indexed_colors:
-        - { index: 16, color: '0xb15c00' }
-        - { index: 17, color: '0xc64343' }
+    # Dim colors
+    dim:
+        black: "#45475A" # surface1
+        red: "#F38BA8" # red
+        green: "#A6E3A1" # green
+        yellow: "#F9E2AF" # yellow
+        blue: "#89B4FA" # blue
+        magenta: "#F5C2E7" # pink
+        cyan: "#94E2D5" # teal
+        white: "#BAC2DE" # subtext1
 
-    tokyonight-moon: &tokyonight-moon
-      primary:
-        background: '0x222436'
-        foreground: '0xc8d3f5'
-
-      normal:
-        black:   '0x1b1d2b'
-        red:     '0xff757f'
-        green:   '0xc3e88d'
-        yellow:  '0xffc777'
-        blue:    '0x82aaff'
-        magenta: '0xc099ff'
-        cyan:    '0x86e1fc'
-        white:   '0x828bb8'
-
-      bright:
-        black:   '0x444a73'
-        red:     '0xff757f'
-        green:   '0xc3e88d'
-        yellow:  '0xffc777'
-        blue:    '0x82aaff'
-        magenta: '0xc099ff'
-        cyan:    '0x86e1fc'
-        white:   '0xc8d3f5'
-
-      indexed_colors:
-        - { index: 16, color: '0xff966c' }
-        - { index: 17, color: '0xc53b53' }
-      #
-    tokyonight-storm: &tokyonight-storm
-      primary:
-        background: '0x24283b'
-        foreground: '0xc0caf5'
-
-      normal:
-        black:   '0x1d202f'
-        red:     '0xf7768e'
-        green:   '0x9ece6a'
-        yellow:  '0xe0af68'
-        blue:    '0x7aa2f7'
-        magenta: '0xbb9af7'
-        cyan:    '0x7dcfff'
-        white:   '0xa9b1d6'
-
-      bright:
-        black:   '0x414868'
-        red:     '0xf7768e'
-        green:   '0x9ece6a'
-        yellow:  '0xe0af68'
-        blue:    '0x7aa2f7'
-        magenta: '0xbb9af7'
-        cyan:    '0x7dcfff'
-        white:   '0xc0caf5'
-
-      indexed_colors:
-        - { index: 16, color: '0xff9e64' }
-        - { index: 17, color: '0xdb4b4b' }
-
-colors: *tokyonight
+    indexed_colors:
+        - { index: 16, color: "#FAB387" }
+        - { index: 17, color: "#F5E0DC" }
