@@ -38,10 +38,6 @@
     "command": "workbench.view.scm"
   },
   {
-    "key": "shift+cmd+'",
-    "command": "chatgpt.sidebar.focus"
-  },
-  {
     "key": "cmd+'",
     "command": "figma.views.files.focus"
   },

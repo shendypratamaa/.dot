@@ -101,7 +101,7 @@ alias tksv='tmux kill-server'
 alias idh=" \
     tmux rename-window ide &&
     clear && figlet 'lets works' && \
-    tmux split-window -h -p 35 && \
+    tmux split-window -h -p 25 && \
     tmux split-window -v -p 50 && \
     tmux select-pane -t 0
 "

@@ -33,5 +33,4 @@ vscodevim.vim
 wix.vscode-import-cost
 xabikos.JavaScriptSnippets
 yzhang.markdown-all-in-one
-zhang-renyang.chat-gpt
 Zignd.html-css-class-completion

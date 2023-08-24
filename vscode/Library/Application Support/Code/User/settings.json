@@ -34,10 +34,6 @@
   "editor.lineHeight": 20,
   "editor.fontWeight": 400,
   "editor.fontLigatures": true,
-  "editor.codeActionsOnSave": {
-    "source.addMissingImports": true,
-    "source.organizeImports": true
-  },
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
@@ -75,7 +71,6 @@
   "editor.minimap.enabled": false,
   "editor.matchBrackets": "never",
   "editor.scrollbar.horizontal": "hidden",
-  "editor.suggest.insertMode": "replace",
   "editor.cursorStyle": "block",
   "editor.cursorBlinking": "phase",
   "editor.cursorSmoothCaretAnimation": "on",
@@ -122,11 +117,6 @@
   "prettier.useTabs": false,
 
   "typescript.preferences.importModuleSpecifier": "relative",
-  "typescript.tsserver.maxTsServerMemory": 3072,
-  "typescript.format.enable": false,
-  "typescript.validate.enable": false,
-  "typescript.surveys.enabled": false,
-  "typescript.disableAutomaticTypeAcquisition": true,
 
   "vscode_custom_css.imports": [
     "file:///Users/shecdypratama/.config/vscode-font-style/.vscode-style.css"
@@ -146,7 +136,6 @@
 
   "code-eol.color": "#514E4E",
   "importCost.bundleSizeColoring": "compressed",
-  "chatgpt.lang": "en",
 
   "jsdoc-generator.includeTime": false,
   "jsdoc-generator.includeDate": false,
