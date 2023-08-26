@@ -26,7 +26,7 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 export EXCLUDE_FZF="\
 --exclude=.config/pipe-viewer/playlists --exclude=.config/pipe-viewer/watched.txt \
 --exclude=.config/karabiner --exclude=Desktop --exclude=Documents --exclude=Downloads --exclude=Library \
---exclude=Movies --exclude=Music --exclude=Pictures --exclude=Public --exclude=.vscode \
+--exclude=Movies --exclude=Music --exclude=Pictures --exclude=.vscode \
 "
 
 # FZF PREVIEW WITH BAT

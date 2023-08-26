@@ -90,6 +90,8 @@ alias vs="
         xargs -r $EDITOR -c 'cd %:h'
     "
 
+alias fn="fd . $HOME/Documents/pd -d 2 --type f | fzf --reverse --prompt='Select > ' -m --preview '$PREVBAT' | xargs -r $EDITOR"
+
 # TMUX
 alias ta='tmux attach -t'
 alias tad='tmux attach -d -t'

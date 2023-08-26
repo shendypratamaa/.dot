@@ -276,13 +276,6 @@
   },
 
   "telemetry.telemetryLevel": "off",
-  "terminal.integrated.defaultProfile.osx": "tmux-shell",
-  "terminal.integrated.profiles.osx": {
-    "tmux-shell": {
-      "path": "tmux",
-      "args": ["new-session", "-A"]
-    }
-  },
   "git.autofetch": true,
   "diffEditor.renderSideBySide": false,
   "workbench.colorTheme": "Catppuccin Macchiato",
