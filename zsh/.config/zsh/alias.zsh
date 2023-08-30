@@ -55,6 +55,7 @@ alias news="newsboat -q"
 alias npml="npm list --location=global --depth=0"
 alias ppath="echo $PATH | tr ':' '\n'"
 alias gh="open \`git remote -v | grep fetch | awk '{print \$2}' | sed 's/git@/http:\/\//' | sed 's/com:/com\//'\`| head -n1"
+alias vim="nvim"
 
 # GOTO ALIAS
 alias cdd="cd ~/.dot"
