@@ -17,7 +17,7 @@
   program = /opt/homebrew/bin/gpg
 
 [core]
-  autocrlf = input
+  autocrlf = false
   safecrlf = true
   pager = delta
   editor = nvim
