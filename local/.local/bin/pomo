@@ -1,0 +1,22 @@
+#!/bin/sh
+
+FZF="fzf --reverse --inline-info"
+MENU="start 🧠\nbreak 💤"
+
+function pomodoro_timer() {
+  SELECT_MENU="$(echo "$MENU" | $FZF --prompt "Select Pomodoro Options > " | awk '{print $1}')"
+  if [ "$SELECT_MENU" = "start" ]; then
+    TIMER="timer 60m"
+    TITLE="It's Time To Focus 🧠"
+    echo $TITLE && $TIMER
+  elif [ "$SELECT_MENU" = "break" ]; then
+    TIMER="timer 10m"
+    TITLE="It's Time To Break 💤"
+    echo $TITLE && $TIMER
+  else
+    exit
+  fi
+}
+
+pomodoro_timer
+

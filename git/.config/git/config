@@ -17,8 +17,7 @@
   program = /opt/homebrew/bin/gpg
 
 [core]
-  autocrlf = false
-  safecrlf = true
+	autocrlf = input
   pager = delta
   editor = nvim
   excludesFile = /Users/shendypratama/.config/git/.gitignore
