@@ -7,7 +7,7 @@ window:
         y: 0
     dynamic_title: true
     dynamic_padding: true
-    opacity: 0.95
+    opacity: 1
     decorations: none
 
 cursor:

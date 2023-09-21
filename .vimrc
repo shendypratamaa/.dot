@@ -1,8 +1,10 @@
-set guicursor=
+syntax on
+filetype on
+set guicursor=""
 set clipboard=unnamed
 set scrolloff=8
-set tabstop=4 softtabstop=4 
-set shiftwidth=4 
+set tabstop=4 softtabstop=4
+set shiftwidth=4
 set timeoutlen=200
 set updatetime=200
 set number

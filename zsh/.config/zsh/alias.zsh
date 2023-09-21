@@ -72,6 +72,17 @@ alias cdm="cd ~/Music/pm"
 alias msv="pipe-viewer --player=mpvv"
 alias msc="pipe-viewer -n --player=mpvm"
 
+# POMO
+alias work="timer 60m && terminal-notifier -message 'Pomodoro'\
+        -title 'Work Timer is up! Take a Break 😊'\
+        -appIcon '~/Pictures/pumpkin.png'\
+        -sound Crystal && clear"
+
+alias rest="timer 10m && terminal-notifier -message 'Pomodoro'\
+        -title 'Break is over! Get back to work 😬'\
+        -appIcon '~/Pictures/pumpkin.png'\
+        -sound Crystal && clear"
+
 # FZF ALIAS
 alias vd="
     cd ~ && cd \$($FZF_DEFAULT_COMMAND $EXCLUDE_FZF -d 7 --type d |
