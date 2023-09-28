@@ -4,10 +4,10 @@
 fn - h:
 
 # open broweser
-cmd + shift - return : open -a firefox
+cmd + shift - return : open -a "Google Chrome"
 
 # open terminal
-# cmd - return : open -a alacritty
+cmd - return : open -a alacritty
 
 # fzf-menu
 cmd + shift - o : /Applications/Alacritty.app/Contents/MacOS/alacritty --title="fzf-launcher" -e sh -c "$HOME/.local/share/fzf-launcher/fzf-launcher"
@@ -52,7 +52,7 @@ shift + alt - r : yabai -m space --rotate 90
 cmd - m : yabai -m window --toggle zoom-fullscreen
 
 # FLOAT / UNFLOAT WINDOW AND CENTER ON SCREEN
-cmd + shift - m : yabai -m window --toggle float; \
+cmd + shift - f : yabai -m window --toggle float; \
           	  yabai -m window --grid 4:4:1:1:2:2
 
 # MIROR
