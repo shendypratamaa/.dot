@@ -5,8 +5,6 @@
   "zenMode.hideLineNumbers": false,
   "zenMode.fullScreen": false,
   "zenMode.hideStatusBar": false,
-
-  "workbench.activityBar.visible": false,
   "workbench.sideBar.location": "right",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "none",
