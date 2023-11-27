@@ -53,6 +53,6 @@ yabai -m rule --add label="mvp" app="^mpv" manage=off
 # yabai -m rule --add app="^(Messages|FaceTime)$" space=4
 
 # FZF-MENU
-yabai -m rule --add title="fzf-launcher" manage=off sticky=on layer=above border=on
+yabai -m rule --add title="fzf-launcher" manage=off
 
 echo "yabai config loaded..🔥"
