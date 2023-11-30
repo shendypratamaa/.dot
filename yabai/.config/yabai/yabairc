@@ -54,5 +54,6 @@ yabai -m rule --add label="mvp" app="^mpv" manage=off
 
 # FZF-MENU
 yabai -m rule --add title="fzf-launcher" manage=off
+yabai -m rule --add app="Google Chrome" title="Picture in Picture" manage=off
 
 echo "yabai config loaded..🔥"

@@ -62,7 +62,7 @@ if [ -x "$FD" ] && [ -x "$FZF" ] && [ -x "$SED" ]; then
 		App\ Store* | Font\ Book* | Image\ Capture* | Photo\ Booth* | System\ Settings* | Time\ Machine*)
 			open -a "/System/Applications/$SELECT"
 			;;
-		Visual\ Studio\ Code*)
+		Visual\ Studio\ Code* | Google\ Chrome* | QMK\ Toolbox*)
 			open -a "/Applications/$SELECT"
 			;;
 		esac
@@ -74,7 +74,7 @@ if [ -x "$FD" ] && [ -x "$FZF" ] && [ -x "$SED" ]; then
 		Automator* | Books* | Calculator* | Calendar* | Contact* | Clock* | FaceTime* | FindMy* | Freeform* | Launchpad* | Maps* | Mail* | Music* | Messages* | Photos* | Reminders* | Siri* | VoiceMemos* | Weather*)
 			open -a "/System/Applications/$SELECT"
 			;;
-		Alacritty* | AltTab* | Firefox* | Karabiner-Elements* | karabiner-EventViewer* | Safari* | RunJS* | Whatsapp* | Spotify* | Skype*)
+		Alacritty* | AltTab* | Firefox* | Karabiner-Elements* | karabiner-EventViewer* | Safari* | RunJS* | Whatsapp* | Spotify* | Skype* | Notion* | Postman* | Discrod* | Figma*)
 			open -a "/Applications/$SELECT"
 			;;
 		Browser-surf | Bookmarks | Kill-process | Emoji | Vocabulary)
