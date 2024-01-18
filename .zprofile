@@ -42,7 +42,11 @@ export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
 [[ "$PATH" =~ "$PYENV_ROOT/shims" ]] || PATH="$PYENV_ROOT/shims:$PATH"
 eval $(pyenv init --path)
 
+# POSTGRESQL
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+
 # TMUX SESSION
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux attach -t || tmux new -s
 fi
+
