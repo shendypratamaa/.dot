@@ -4,7 +4,7 @@
 fn - h:
 
 # open broweser
-cmd + shift - return : open -a "Google Chrome"
+cmd + shift - return : open -a "Brave Browser"
 
 # open terminal
 cmd - return : open -a alacritty
@@ -67,6 +67,7 @@ cmd + ctrl - n : yabai -m space --create && \
                  yabai -m window --space "${index}" && \
                  yabai -m space --focus "${index}";
 
+# CREATE SPACE
 cmd + ctrl - c : yabai -m space --create
 
 # RELOAD YABAI + SKHD + STATUS BAR

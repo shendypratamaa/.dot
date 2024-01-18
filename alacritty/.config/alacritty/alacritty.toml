@@ -1,0 +1,19 @@
+import = ["/Users/shendypratama/.config/alacritty/schemes.toml", "/Users/shendypratama/.config/alacritty/font.toml", "/Users/shendypratama/.config/alacritty/key_bindings.toml"]
+ipc_socket = true
+
+[cursor.style]
+blinking = "never"
+shape = "block"
+
+[env]
+TERM = "alacritty"
+
+[window]
+decorations = "none"
+dynamic_padding = true
+dynamic_title = true
+opacity = 1
+
+[window.padding]
+x = 4
+y = 0
