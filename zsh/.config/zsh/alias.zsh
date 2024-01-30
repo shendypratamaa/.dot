@@ -67,6 +67,7 @@ alias cds="cd ~/.local/bin"
 alias cdl="cd ~/.local/share"
 alias cdp="cd ~/Documents/pd"
 alias cdm="cd ~/Music/pm"
+alias pn="pnpm"
 
 # PIPE-VIEWER
 alias msv="pipe-viewer --player=mpvv"

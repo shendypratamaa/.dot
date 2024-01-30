@@ -21,7 +21,7 @@ THUMB_VID="$HOME/.cache/user/err.jpg"
 FZF_CACHE="$HOME/.cache/user/preview_fzf.txt"
 
 preview() {
-	MENU="images\nbooks"
+	MENU="images\nbooks\nvideos"
 	SELECT_MENU="$(
 		echo -e "$MENU" |
 			$FZF --prompt "Select Previewer > " |
