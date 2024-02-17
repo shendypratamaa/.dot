@@ -9,14 +9,14 @@ bundle() {
 }
 
 update() {
-	clean &&
-		brew update &&
-		brew upgrade &&
-		brew cleanup --prune=all &&
-		brew autoremove &&
-		brew info &&
-		brew doctor &&
-		sleep 0.01
+  clean &&
+    brew update &&
+    brew upgrade &&
+    brew cleanup --prune=all &&
+    brew autoremove &&
+    brew info &&
+    brew doctor &&
+    sleep 0.01
 }
 
 if [ "$1" == "u" ]; then
@@ -26,3 +26,4 @@ elif [ "$1" == "b" ]; then
 else
 	echo "[command] [opts] ? [u]update : [b]undle"
 fi
+

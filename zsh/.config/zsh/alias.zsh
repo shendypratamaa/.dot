@@ -56,6 +56,7 @@ alias npml="npm list --location=global --depth=0"
 alias ppath="echo $PATH | tr ':' '\n'"
 alias gh="open \`git remote -v | grep fetch | awk '{print \$2}' | sed 's/git@/http:\/\//' | sed 's/com:/com\//'\`| head -n1"
 alias vim="nvim"
+alias mk="musikcube"
 
 # GOTO ALIAS
 alias cdd="cd ~/.dot"

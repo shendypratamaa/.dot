@@ -1,6 +1,7 @@
 {
-  "breadcrumbs.enabled": false,
   "window.title": " ",
+  "breadcrumbs.enabled": false,
+  "window.commandCenter": false,
 
   "zenMode.hideLineNumbers": false,
   "zenMode.fullScreen": false,
@@ -10,7 +11,7 @@
   "workbench.startupEditor": "none",
   "workbench.layoutControl.type": "menu",
   "workbench.layoutControl.enabled": false,
-  "workbench.editor.showTabs": false,
+  "workbench.editor.showTabs": "multiple",
   "workbench.tree.renderIndentGuides": "none",
 
   "files.autoSave": "onWindowChange",
@@ -28,8 +29,8 @@
   },
 
   "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
-  "editor.fontSize": 12,
-  "editor.lineHeight": 20,
+  "editor.fontSize": 14,
+  "editor.lineHeight": 25,
   "editor.fontWeight": 400,
   "editor.fontLigatures": true,
   "editor.tokenColorCustomizations": {
@@ -63,7 +64,7 @@
     ]
   },
   "editor.bracketPairColorization.enabled": true,
-  "editor.occurrencesHighlight": false,
+  "editor.occurrencesHighlight": "off",
   "editor.guides.indentation": false,
   "editor.stickyScroll.enabled": true,
   "editor.minimap.enabled": false,
@@ -132,13 +133,13 @@
   "advancedNewFile.showInformationMessages": true,
   "advancedNewFile.convenienceOptions": ["last", "current", "root"],
 
-  "code-eol.color": "#514E4E",
+  "code-eol.color": "#Ff3f3f3",
   "importCost.bundleSizeColoring": "compressed",
 
   "jsdoc-generator.includeTime": false,
   "jsdoc-generator.includeDate": false,
 
-  "vim.easymotion": true,
+  "vim.easymotion": false,
   "vim.easymotionMarkerBackgroundColor": "#424874",
   "vim.easymotionMarkerForegroundColorOneChar": "#F4EEFF",
   "vim.easymotionMarkerForegroundColorTwoCharFirst": "#F4EEFF",
@@ -283,5 +284,5 @@
   "gitlens.outputLevel": "debug",
   "gitlens.advanced.messages": {
     "suppressDebugLoggingWarning": true
-  }
+  },
 }
