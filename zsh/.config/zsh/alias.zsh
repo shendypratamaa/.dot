@@ -33,7 +33,7 @@ function update_terminfo () {
 alias c-zsh="$EDITOR ~/.config/zsh/.zshrc"
 alias c-zpr="$EDITOR ~/.zprofile"
 alias c-tmux="$EDITOR ~/.config/tmux/tmux.conf"
-alias c-alt="$EDITOR ~/.config/alacritty/alacritty.yml"
+alias c-alt="$EDITOR ~/.config/alacritty/alacritty.toml"
 alias c-kitty="$EDITOR ~/.config/kitty/kitty.conf"
 alias c-pipe="$EDITOR ~/.config/pipe-viewer/pipe-viewer.conf"
 alias c-vim="vi ~/.vimrc"
@@ -104,6 +104,23 @@ alias vs="
     "
 
 alias fn="fd . $HOME/Documents/pd -d 2 --type f | fzf --reverse --prompt='Select > ' -m --preview '$PREVBAT' | xargs -r $EDITOR"
+
+fzf-delete-history-widget() {
+    local selected num
+    setopt localoptions noglobsubst noposixbuiltins pipefail no_aliases 2> /dev/null
+    local selected=( $(fc -rl 1 | awk '{ cmd=$0; sub(/^[ \t]*[0-9]+\**[ \t]+/, "", cmd); if (!seen[cmd]++) print $0 }' | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} ${FZF_DEFAULT_OPTS-} -n2..,.. --bind=ctrl-r:toggle-sort,ctrl-z:ignore ${FZF_CTRL_R_OPTS-} --query=${(qqq)LBUFFER} +m --multi --bind 'enter:become(echo {+1})'" $(__fzfcmd)) )
+    local ret=$?
+    if [ -n "$selected[*]" ]; then
+      hist delete $selected[*]
+    fi
+    zle reset-prompt
+    return $ret
+}
+
+zle     -N            fzf-delete-history-widget
+bindkey -M emacs '^E' fzf-delete-history-widget
+bindkey -M vicmd '^E' fzf-delete-history-widget
+bindkey -M viins '^E' fzf-delete-history-widget
 
 # TMUX
 alias ta='tmux attach -t'

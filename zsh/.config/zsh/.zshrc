@@ -26,6 +26,7 @@ zsh_add_file "vimode.zsh"
 # PLUGINS
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
+zsh_add_plugin "zsh-users/zsh-hist"
 
 # NVM
 source $HOME/.local/share/nvm/nvm.sh

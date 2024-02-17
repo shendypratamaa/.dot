@@ -16,11 +16,11 @@ export FZF_DEFAULT_OPTS="\
 --margin=1,2 --border=sharp --inline-info --preview-window='border-sharp' \
 --bind ctrl-f:preview-page-down,ctrl-b:preview-page-up \
 "
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
---color=fg:#c0caf5,bg:#1a1b26,hl:#bb9af7
---color=fg+:#c0caf5,bg+:#1a1b26,hl+:#7dcfff
---color=info:#7aa2f7,prompt:#7dcfff,pointer:#7dcfff
---color=marker:#9ece6a,spinner:#9ece6a,header:#9ece6a'
+# export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+# --color=fg:#c0caf5,bg:#1a1b26,hl:#bb9af7
+# --color=fg+:#c0caf5,bg+:#1a1b26,hl+:#7dcfff
+# --color=info:#7aa2f7,prompt:#7dcfff,pointer:#7dcfff
+# --color=marker:#9ece6a,spinner:#9ece6a,header:#9ece6a'
 
 # FZF OPTS EXCLUDE DIR
 export EXCLUDE_FZF="\
@@ -75,3 +75,6 @@ export NODE_REPL_HISTORY="$XDG_DATA_HOME/node/node_repl_history"
 
 # API
 export OPENAI_API_KEY="$(cat ~/Documents/pd/data/openai.txt)"
+
+# WGET
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
