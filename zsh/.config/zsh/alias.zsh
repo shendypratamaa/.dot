@@ -56,7 +56,6 @@ alias npml="npm list --location=global --depth=0"
 alias ppath="echo $PATH | tr ':' '\n'"
 alias gh="open \`git remote -v | grep fetch | awk '{print \$2}' | sed 's/git@/http:\/\//' | sed 's/com:/com\//'\`| head -n1"
 alias vim="nvim"
-alias mk="musikcube"
 
 # GOTO ALIAS
 alias cdd="cd ~/.dot"
@@ -67,7 +66,8 @@ alias cde="cd ~/.cache"
 alias cds="cd ~/.local/bin"
 alias cdl="cd ~/.local/share"
 alias cdp="cd ~/Documents/pd"
-alias cdm="cd ~/Music/pm"
+alias cdm="cd ~/Music/self"
+alias cm="cmus"
 alias pn="pnpm"
 
 # PIPE-VIEWER

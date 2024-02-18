@@ -22,7 +22,7 @@ export EDITOR="nvim"
 export TERMINAL="alacritty"
 
 # BROWSER
-export BROWSER="chrome"
+# export BROWSER="brave"
 
 # TERMINFO
 export TERMINFO="$XDG_DATA_HOME/terminfo"

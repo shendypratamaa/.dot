@@ -14,5 +14,5 @@ case "$url" in
 	*pdf|*cbz|*cbr)
 		curl -sL "$url" > "$HOME/.cache/zathura/$(echo "$url" | sed "s/.*\///;s/%20/ /g")" && zathura "$HOME/.cache/zathura/$(echo "$url" | sed "s/.*\///;s/%20/ /g")"  >/dev/null 2>&1 & ;;
 	*)
-		[ -f "$url" ] && $EDITOR "$url" >/dev/null 2>&1 || open -a "$BROWSER" "$url" >/dev/null 2>&1
+		[ -f "$url" ] && $EDITOR "$url" >/dev/null 2>&1 || open "$url" >/dev/null 2>&1
 esac
