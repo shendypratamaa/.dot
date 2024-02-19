@@ -2,8 +2,8 @@ aaron-bond.better-comments
 alefragnani.project-manager
 be5invis.vscode-custom-css
 bradlc.vscode-tailwindcss
-Catppuccin.catppuccin-vsc
-ChakrounAnas.turbo-console-log
+catppuccin.catppuccin-vsc
+chakrounanas.turbo-console-log
 christian-kohler.npm-intellisense
 christian-kohler.path-intellisense
 crystal-spider.jsdoc-generator
@@ -12,7 +12,7 @@ dbaeumer.vscode-eslint
 dsznajder.es7-react-js-snippets
 eamodio.gitlens
 ecmel.vscode-html-css
-EditorConfig.EditorConfig
+editorconfig.editorconfig
 enkia.tokyo-night
 esbenp.prettier-vscode
 figma.figma-vscode-extension
@@ -26,11 +26,11 @@ mattpocock.ts-error-translator
 meganrogge.template-string-converter
 ms-vscode.vscode-typescript-next
 patbenatar.advanced-new-file
-PKief.material-icon-theme
+pkief.material-icon-theme
 sohamkamani.code-eol
 usernamehw.errorlens
 vscodevim.vim
 wix.vscode-import-cost
-xabikos.JavaScriptSnippets
+xabikos.javascriptsnippets
 yzhang.markdown-all-in-one
-Zignd.html-css-class-completion
+zignd.html-css-class-completion
