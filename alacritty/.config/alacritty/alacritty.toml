@@ -12,9 +12,9 @@ TERM = "alacritty"
 decorations = "none"
 dynamic_padding = true
 dynamic_title = true
-opacity = 0.85
+opacity = 0.6
 blur = true
 
 [window.padding]
-x = 4
+x = 0
 y = 0
