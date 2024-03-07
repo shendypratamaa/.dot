@@ -142,7 +142,7 @@ alias idh=" \
 alias idv=" \
     tmux rename-window ide &&
     clear && figlet 'lets works' && \
-    tmux split-window -v -p 35 && \
+    tmux split-window -v -p 20 && \
     tmux split-window -h -p 50 && \
     tmux select-pane -t 0
 "
