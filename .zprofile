@@ -50,6 +50,6 @@ export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
 
 # TMUX SESSION
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-    tmux attach -t || tmux new -s
+    tmux attach -t || tmux new -s "x"
 fi
 
