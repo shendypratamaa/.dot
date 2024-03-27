@@ -285,4 +285,5 @@
   "gitlens.advanced.messages": {
     "suppressDebugLoggingWarning": true
   },
+  "editor.accessibilitySupport": "off",
 }
