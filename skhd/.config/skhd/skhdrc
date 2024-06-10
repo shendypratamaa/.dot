@@ -7,7 +7,10 @@ fn - h:
 cmd + shift - return : open -a "Brave Browser"
 
 # open terminal
-cmd - return : open -a alacritty
+# cmd - return : open -a alacritty
+
+# open editor
+# cmd - return : open /Applications/Visual\ Studio\ Code.app
 
 # fzf-menu
 cmd + shift - o : /Applications/Alacritty.app/Contents/MacOS/alacritty --title="fzf-launcher" -e sh -c "$HOME/.local/share/fzf-launcher/fzf-launcher"

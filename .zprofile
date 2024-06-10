@@ -1,3 +1,7 @@
+emulate sh
+source ~/.profile
+emulate zsh
+
 # PREVENT DUPLICATED PATH
 typeset -U PATH
 
@@ -47,6 +51,13 @@ export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 
 # SQLITE
 export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
+
+# PHP
+export PATH="/opt/homebrew/opt/php@8.1/bin:$PATH"
+export PATH="/opt/homebrew/opt/php@8.1/sbin:$PATH"
+
+# MYSQL
+export PATH="/opt/homebrew/opt/mysql@5.7/bin:$PATH"
 
 # TMUX SESSION
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then

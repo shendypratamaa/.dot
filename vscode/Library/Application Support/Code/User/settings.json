@@ -29,7 +29,7 @@
   },
 
   "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
-  "editor.fontSize": 14,
+  "editor.fontSize": 12,
   "editor.lineHeight": 25,
   "editor.fontWeight": 400,
   "editor.fontLigatures": true,
@@ -117,12 +117,7 @@
 
   "typescript.preferences.importModuleSpecifier": "relative",
 
-  "vscode_custom_css.imports": [
-    "file:///Users/shecdypratama/.config/vscode-font-style/.vscode-style.css"
-  ],
-
-  "projectManager.git.baseFolders": ["$home/Public/project/typescript"],
-  "projectManager.sortList": "Recent",
+  "vscode_custom_css.imports": ["file:///Users/shecdypratama/.config/vscode-font-style/.vscode-style.css"],
 
   "advancedNewFile.exclude": {
     "node_modules": true,
@@ -135,9 +130,6 @@
 
   "code-eol.color": "#Ff3f3f3",
   "importCost.bundleSizeColoring": "compressed",
-
-  "jsdoc-generator.includeTime": false,
-  "jsdoc-generator.includeDate": false,
 
   "vim.easymotion": false,
   "vim.easymotionMarkerBackgroundColor": "#424874",
@@ -195,10 +187,6 @@
       "commands": [":wq"]
     },
     {
-      "before": ["]", "g", "n"],
-      "commands": ["jsdoc-generator.generateJsdoc"]
-    },
-    {
       "before": ["<S-k>"],
       "commands": ["editor.action.showHover"]
     },
@@ -239,10 +227,6 @@
       "commands": ["workbench.action.showCommands"]
     },
     {
-      "before": ["]", "z"],
-      "commands": ["workbench.action.toggleZenMode"]
-    },
-    {
       "before": ["<c-u>"],
       "after": ["2", "0", "k", "z", "z"]
     },
@@ -278,12 +262,15 @@
   "git.autofetch": true,
   "diffEditor.renderSideBySide": false,
   "workbench.colorTheme": "Catppuccin Macchiato",
-  "totalTypeScript.hideAllTips": false,
-  "totalTypeScript.hideBasicTips": false,
-  "totalTypeScript.hiddenTips": ["typing-function-parameters", "basic-types"],
   "gitlens.outputLevel": "debug",
   "gitlens.advanced.messages": {
     "suppressDebugLoggingWarning": true
   },
   "editor.accessibilitySupport": "off",
+  "git.openRepositoryInParentFolders": "never",
+
+  "extensions.experimental.affinity": {
+    "pub.name": 1,
+    "vscodevim.vim": 1
+  }
 }

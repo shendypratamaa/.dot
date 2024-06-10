@@ -1,19 +1,11 @@
 [
   {
     "key": "cmd+f",
-    "command": ""
+    "command": "editor.action.formatDocument"
   },
   {
     "key": "cmd+n",
     "command": "extension.advancedNewFile"
-  },
-  {
-    "key": "cmd+o",
-    "command": "projectManager.listGitProjects#sideBarGit"
-  },
-  {
-    "key": "cmd+r",
-    "command": "projectManager.refreshGitProjects"
   },
   {
     "key": "cmd+e",
@@ -38,18 +30,6 @@
     "command": "workbench.view.scm"
   },
   {
-    "key": "cmd+'",
-    "command": "figma.views.files.focus"
-  },
-  {
-    "key": "cmd+\\",
-    "command": "projectsExplorerGit.focus"
-  },
-  {
-    "key": "ctrl+f",
-    "command": "editor.action.formatDocument"
-  },
-  {
     "key": "ctrl+j",
     "command": "selectNextSuggestion",
     "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
@@ -67,10 +47,6 @@
     "key": "ctrl+shift+k",
     "command": "editor.action.moveLinesUpAction",
     "when": "editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+\\",
-    "command": "workbench.action.terminal.toggleTerminal"
   },
   {
     "key": "cmd+0",
@@ -105,10 +81,6 @@
     "key": "ctrl+-",
     "command": "undo_expand_region",
     "when": "editorTextFocus && editorHasSelection"
-  },
-  {
-    "key": "shift+cmd+c",
-    "command": "turboConsoleLog.displayLogMessage"
   },
   {
     "key": "a",
